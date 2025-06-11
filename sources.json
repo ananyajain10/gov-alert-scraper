@@ -1,0 +1,41 @@
+[
+    {
+      "name": "ICAI notifications",
+      "url": "https://www.icai.org/category/notifications",
+      "scraper": "icaiscraper"
+    },
+    {
+      "name": "ICAI bos-important-announcements",
+      "url": "https://www.icai.org/category/bos-important-announcements",
+      "scraper": "icaiscraper"
+    },
+    {
+      "name": "Income Tax latest-news",
+      "url": "https://www.incometax.gov.in/iec/foportal/latest-news",
+      "scraper": "income_tax_scraper"
+    },
+    {
+        "name": "Income Tax e-mail",
+        "url": "https://www.incometax.gov.in/iec/foportal/e-Campaigns/e-mail",
+        "scraper": "income_tax_scraper"
+      },
+      {
+        "name": "Income Tax sms",
+        "url": "https://www.incometax.gov.in/iec/foportal/e-Campaigns/sms",
+        "scraper": "income_tax_scraper"
+      },
+      {
+  "name": "GST Advisory",
+  "url": "https://services.gst.gov.in/services/advisory/advisoryandreleases",
+  "scraper": "gst_detailed_scraper"
+}
+
+      
+      
+      
+
+      
+      
+      
+  ]
+  
