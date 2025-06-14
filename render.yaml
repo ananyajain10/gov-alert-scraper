@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nodenoti
+    env: node
+    buildCommand: |
+      npm install
+      npx puppeteer browsers install chrome
+    startCommand: node main.js
+    envVars:
+      - key: NODE_ENV
+        value: production
