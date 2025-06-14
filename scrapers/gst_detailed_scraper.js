@@ -1,11 +1,10 @@
-import puppeteer from 'puppeteer';
-import cheerio from 'cheerio';
-import fs from 'fs';
-import path from 'path';
-import axios from 'axios';
-import dotenv from 'dotenv';
+const puppeteer = require('puppeteer');
+const cheerio = require('cheerio');
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
 
-dotenv.config();
+require('dotenv').config();
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_IDS = process.env.TELEGRAM_CHAT_IDS
@@ -58,60 +57,62 @@ const getRenderedHTML = async (url) => {
   return html;
 };
 
-export const run = async (url, name) => {
-  const STORAGE_FILE = path.join(STORAGE_DIR, `${name}.json`);
+module.exports = {
+  run: async (url, name) => {
+    const STORAGE_FILE = path.join(STORAGE_DIR, `${name}.json`);
 
-  try {
-    const html = await getRenderedHTML(url);
-  
-    const $ = cheerio.load(html);
-    const items = [];
+    try {
+      const html = await getRenderedHTML(url);
+    
+      const $ = cheerio.load(html);
+      const items = [];
 
-    console.log('🔍 Parsing GST advisories...');
-    $('#nws-items > li.news-item-dtl').each((_, item) => {
-      const title = $(item).find('h3.news-item--header').text().trim();
-      const summary = $(item).find('p.news-item--brieftext span').text().trim().replace(/\s+/g, ' ');
-      const date = $(item).find('p.news-item--date').text().trim() || 'Unknown';
-      const tags = $(item).find('ul.news-item--tags li .tag-btn')
-        .map((i, tag) => $(tag).text().trim()).get().join(', ');
+      console.log('🔍 Parsing GST advisories...');
+      $('#nws-items > li.news-item-dtl').each((_, item) => {
+        const title = $(item).find('h3.news-item--header').text().trim();
+        const summary = $(item).find('p.news-item--brieftext span').text().trim().replace(/\s+/g, ' ');
+        const date = $(item).find('p.news-item--date').text().trim() || 'Unknown';
+        const tags = $(item).find('ul.news-item--tags li .tag-btn')
+          .map((i, tag) => $(tag).text().trim()).get().join(', ');
 
-      if (title) {
-        items.push({ title, summary, date, tags, link: url });
+        if (title) {
+          items.push({ title, summary, date, tags, link: url });
+        }
+      });
+
+      console.log(`📄 Found ${items.length} advisories`);
+
+      if (!items.length) {
+        console.log(`⚠️ No advisories found on ${name}`);
+        return;
       }
-    });
 
-    console.log(`📄 Found ${items.length} advisories`);
+      const latest = items[0];
+      let lastSeen = null;
+      if (fs.existsSync(STORAGE_FILE)) {
+        lastSeen = JSON.parse(fs.readFileSync(STORAGE_FILE, 'utf8'));
+      }
 
-    if (!items.length) {
-      console.log(`⚠️ No advisories found on ${name}`);
-      return;
+      const newIndex = items.findIndex(item => item.title === lastSeen?.title);
+      const newItems = newIndex === -1 ? items : items.slice(0, newIndex);
+
+      if (!newItems.length) {
+        console.log(`✅ No new advisories for ${name}`);
+        return;
+      }
+
+      for (let i = newItems.length - 1; i >= 0; i--) {
+        const n = newItems[i];
+        const msg = `📢 *New GST Advisory*\n\n📝 *Title:* ${n.title}\n📅 *Date:* ${n.date}\n🏷 *Tags:* ${n.tags || 'None'}\n\n📄 *Summary:*\n${n.summary || 'No summary.'}\n\n🔗 [View Advisory](${url})`;
+        await sendToTelegram(msg);
+        await delay();
+      }
+
+      fs.writeFileSync(STORAGE_FILE, JSON.stringify(latest, null, 2));
+      console.log(`✅ Saved latest GST advisory: ${latest.title.slice(0, 50)}...`);
+
+    } catch (err) {
+      console.error(`❌ GST Detailed Scraper Error:`, err.stack || err.message);
     }
-
-    const latest = items[0];
-    let lastSeen = null;
-    if (fs.existsSync(STORAGE_FILE)) {
-      lastSeen = JSON.parse(fs.readFileSync(STORAGE_FILE, 'utf8'));
-    }
-
-    const newIndex = items.findIndex(item => item.title === lastSeen?.title);
-    const newItems = newIndex === -1 ? items : items.slice(0, newIndex);
-
-    if (!newItems.length) {
-      console.log(`✅ No new advisories for ${name}`);
-      return;
-    }
-
-    for (let i = newItems.length - 1; i >= 0; i--) {
-      const n = newItems[i];
-      const msg = `📢 *New GST Advisory*\n\n📝 *Title:* ${n.title}\n📅 *Date:* ${n.date}\n🏷 *Tags:* ${n.tags || 'None'}\n\n📄 *Summary:*\n${n.summary || 'No summary.'}\n\n🔗 [View Advisory](${url})`;
-      await sendToTelegram(msg);
-      await delay();
-    }
-
-    fs.writeFileSync(STORAGE_FILE, JSON.stringify(latest, null, 2));
-    console.log(`✅ Saved latest GST advisory: ${latest.title.slice(0, 50)}...`);
-
-  } catch (err) {
-    console.error(`❌ GST Detailed Scraper Error:`, err.stack || err.message);
   }
-}
+};

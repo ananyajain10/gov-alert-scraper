@@ -1,10 +1,8 @@
-import axios from 'axios';
-import cheerio from 'cheerio';
-import fs from 'fs';
-import path from 'path';
-import dotenv from 'dotenv';
-
-dotenv.config();
+const axios = require('axios');
+const cheerio = require('cheerio');
+const fs = require('fs');
+const path = require('path');
+require('dotenv').config();
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const CHAT_IDS = process.env.TELEGRAM_CHAT_IDS
@@ -28,54 +26,56 @@ const sendToTelegram = async (msg) => {
 };
 }
 
-export const run = async (url, name) => {
-  const STORAGE_FILE = path.join(STORAGE_DIR, `${name}.json`);
+module.exports = {
+  run: async (url, name) => {
+    const STORAGE_FILE = path.join(STORAGE_DIR, `${name}.json`);
 
-  try {
-    const { data } = await axios.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0'
+    try {
+      const { data } = await axios.get(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0'
+        }
+      });
+
+      const $ = cheerio.load(data);
+      const rows = $('tr.list-item');
+      const items = [];
+
+      rows.each((_, row) => {
+        const title = $(row).find('.views-field-title').text().trim();
+        const memo = $(row).find('.views-field-field-office-memorandum-no-').text().trim();
+        const date = $(row).find('time').attr('datetime')?.split('T')[0] || 'Unknown';
+        const relativeLink = $(row).find('.views-field-field-circulars-document a').attr('href') || '';
+        const link = relativeLink.startsWith('http') ? relativeLink : `${BASE_URL}${relativeLink}`;
+
+        if (title && link) {
+          items.push({ title, memo, date, link });
+        }
+      });
+
+      if (!items.length) return console.log(`⚠️ No circulars found on ${name}`);
+
+      const latest = items[0];
+      let lastSeen = null;
+      if (fs.existsSync(STORAGE_FILE)) {
+        lastSeen = JSON.parse(fs.readFileSync(STORAGE_FILE, 'utf8'));
       }
-    });
 
-    const $ = cheerio.load(data);
-    const rows = $('tr.list-item');
-    const items = [];
+      const newIndex = items.findIndex(item => item.link === lastSeen?.link);
+      const newItems = newIndex === -1 ? items : items.slice(0, newIndex);
 
-    rows.each((_, row) => {
-      const title = $(row).find('.views-field-title').text().trim();
-      const memo = $(row).find('.views-field-field-office-memorandum-no-').text().trim();
-      const date = $(row).find('time').attr('datetime')?.split('T')[0] || 'Unknown';
-      const relativeLink = $(row).find('.views-field-field-circulars-document a').attr('href') || '';
-      const link = relativeLink.startsWith('http') ? relativeLink : `${BASE_URL}${relativeLink}`;
-
-      if (title && link) {
-        items.push({ title, memo, date, link });
+      for (let i = newItems.length - 1; i >= 0; i--) {
+        const c = newItems[i];
+        const msg = `📢 *New DOE Circular*\n\n📄 *Title:* ${c.title}\n🗂 *Memo No:* ${c.memo}\n📅 *Date:* ${c.date}\n🔗 [Download PDF](${c.link})`;
+        await sendToTelegram(msg);
+        await delay();
       }
-    });
 
-    if (!items.length) return console.log(`⚠️ No circulars found on ${name}`);
+      fs.writeFileSync(STORAGE_FILE, JSON.stringify(latest, null, 2));
+      console.log(`✅ Saved latest DOE circular: ${latest.title.slice(0, 50)}...`);
 
-    const latest = items[0];
-    let lastSeen = null;
-    if (fs.existsSync(STORAGE_FILE)) {
-      lastSeen = JSON.parse(fs.readFileSync(STORAGE_FILE, 'utf8'));
+    } catch (err) {
+      console.error(`❌ DOE Scraper Error:`, err.message);
     }
-
-    const newIndex = items.findIndex(item => item.link === lastSeen?.link);
-    const newItems = newIndex === -1 ? items : items.slice(0, newIndex);
-
-    for (let i = newItems.length - 1; i >= 0; i--) {
-      const c = newItems[i];
-      const msg = `📢 *New DOE Circular*\n\n📄 *Title:* ${c.title}\n🗂 *Memo No:* ${c.memo}\n📅 *Date:* ${c.date}\n🔗 [Download PDF](${c.link})`;
-      await sendToTelegram(msg);
-      await delay();
-    }
-
-    fs.writeFileSync(STORAGE_FILE, JSON.stringify(latest, null, 2));
-    console.log(`✅ Saved latest DOE circular: ${latest.title.slice(0, 50)}...`);
-
-  } catch (err) {
-    console.error(`❌ DOE Scraper Error:`, err.message);
   }
-}
+};
