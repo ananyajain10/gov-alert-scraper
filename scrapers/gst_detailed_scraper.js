@@ -63,7 +63,7 @@ module.exports = {
 
     try {
       const html = await getRenderedHTML(url);
-      fs.writeFileSync('debug.html', html); // Save the full rendered HTML for inspection
+    
       const $ = cheerio.load(html);
       const items = [];
 
