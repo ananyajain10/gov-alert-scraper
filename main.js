@@ -1,6 +1,14 @@
+const express = require('express');
 const cron = require('node-cron');
 const path = require('path');
 const sources = require('./sources.json');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('✅ Scraper service is running and listening for cron triggers.');
+});
 
 const runScrapers = async () => {
   console.log(`\n⏱️ Scraper run started at ${new Date().toLocaleString()}`);
@@ -9,9 +17,9 @@ const runScrapers = async () => {
     try {
       const scraper = require(`./scrapers/${source.scraper}`);
       console.log(`🔍 Scraping: ${source.name}`);
-      await scraper.run(source.url, source.name);  // Pass URL + name
+      await scraper.run(source.url, source.name);
     } catch (err) {
-      console.error(`❌ Error scraping ${source.name}:`, err.message);
+      console.error(`❌ Error scraping ${source.name}:`, err.stack || err.message);
     }
   }
 
@@ -23,3 +31,7 @@ runScrapers();
 
 // Schedule every 10 minutes
 cron.schedule('*/10 * * * *', runScrapers);
+
+app.listen(PORT, () => {
+  console.log(`🚀 Web server running at http://localhost:${PORT}`);
+});

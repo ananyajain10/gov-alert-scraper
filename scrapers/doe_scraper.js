@@ -5,7 +5,9 @@ const path = require('path');
 require('dotenv').config();
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const CHAT_IDS = process.env.TELEGRAM_CHAT_IDS
+  ? process.env.TELEGRAM_CHAT_IDS.split(',').map(id => id.trim())
+  : [];
 const BASE_URL = 'https://doe.gov.in';
 
 const STORAGE_DIR = path.join(__dirname, '..', 'latest_saved');
@@ -15,12 +17,14 @@ const delay = () => new Promise(res => setTimeout(res, Math.floor(Math.random() 
 
 const sendToTelegram = async (msg) => {
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+  for (const chatId of CHAT_IDS) {
   await axios.post(url, {
-    chat_id: CHAT_ID,
+    chat_id: chatId,
     text: msg,
     parse_mode: 'Markdown'
   });
 };
+}
 
 module.exports = {
   run: async (url, name) => {
