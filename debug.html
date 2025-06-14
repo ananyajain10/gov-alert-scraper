@@ -1,0 +1,2173 @@
+<!DOCTYPE html><html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<title>Goods &amp; Services Tax (GST) | Services</title>
+<base href="/services/">
+<link rel="icon" href="//www.gst.gov.in/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="services">
+<meta name="description" content="services">
+<link rel="stylesheet" href="//static.gst.gov.in/uiassets/css/fwk/fa-bootstrap1.2.css">
+<link rel="stylesheet" href="//static.gst.gov.in/uiassets/css/app1.1.css" title="app-css">
+<link rel="stylesheet" href="//static.gst.gov.in/uiassets/css/fwk/datepicker1.0.css">
+<link rel="stylesheet" href="//static.gst.gov.in/uiassets/css/fwk/fullcalendar.min.css">
+<link rel="stylesheet" href="//static.gst.gov.in/uiassets/css/fwk/ng-table.min.css">
+<noscript>
+Please enable javascript
+<meta http-equiv="refresh" content="0; url=//www.gst.gov.in/error/nojs" />
+</noscript><script async="" src="//static.gst.gov.in/uiassets/js/services/forouter1.8.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/common/directives2.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/loginCtrl1.3.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/trackArnpre1.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/forgotCtrl1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/createuserCtrl1.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/mysavedappctrl1.2.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/authCtrl1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/taxPayerDashboardCtrl1.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/contactsctrl1.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/searchtpCtrl1.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/actsrulesctrl1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/holidaylistctrlpre1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/notificationsctrlpre1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/listoftaxpayerprectrl1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/grievancectrlpre1.1.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/officeaddress1.0.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/feedbackprectrl.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/errorDescription.js"></script><script async="" src="//static.gst.gov.in/uiassets/javascripts/services/advisories.js"></script><script async="" src="//static.gst.gov.in/uiassets/js/services/trackApplicationStatus.js"></script>
+</head>
+<body>
+<div data-ng-controller="headerCtrl">
+<!----><ng-include src="'/pages/common/header.html'"><!----><header class="main-header" data-ng-if="!hidemenu">
+	<div class="skip">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="skip list-inline">
+						<li><a tabindex="-1" class="accessible" href="javascript:void(0)">Skip to Main Content</a></li>
+						<li class="high-low"><i class="fa fa-adjust"></i></li>
+						<li class="fresize f-up">A<sup>+</sup></li>
+						<li class="fresize f-down">A<sup>-</sup></li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row branding">
+			<div class="col-xs-12">
+				<a href="//www.gst.gov.in/" title="Goods and Services Tax Home" style="font-size:13px;" id="emblemDis" class="menuList" data-toggle="tooltip" data-placement="top" data-ng-class="{'disabled' :udata.disableMenu}">
+					<img data-ng-src="//static.gst.gov.in/uiassets/images/Emblem_of_India-white.svg" class="logo" alt="Goods and Services Tax Home" onerror="this.data-ng-src='{{servers.GST_STATIC_R1_URL}}/uiassets/images/emblem.png'" style="vertical-align:middle; position:relative;top:-5px;left: 12px;width: 62px;height: 72px;" src="//static.gst.gov.in/uiassets/images/Emblem_of_India-white.svg">
+				</a>
+				<h1 class="site-title"><a href="//www.gst.gov.in/" id="emblemTitDis" class="menuList" data-toggle="tooltip" data-placement="top" data-ng-class="{'disabled' :udata.disableMenu}">Goods and Services Tax<br><span class="subtitle">Government of India, States and Union Territories</span></a></h1>
+				<ul class="list-inline mlinks">
+					<!----><li ng-if="!udata || udata.role == undefined" style="font-size:11px">
+						<a target="_self" href="//reg.gst.gov.in/registration" class="button"> Register</a> 
+					</li><!---->
+					<!----><li ng-if="!udata || udata.role == undefined" style="font-size:11px">
+						<a target="_self" href="//services.gst.gov.in/services/login" data-ng-click="clearPostPP()" class="button"> Login</a> 
+					</li><!---->
+						<!---->
+	          		 <!---->
+				</ul>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="sr-only">Toggle navigation</span>
+				</button>
+			</div>
+		</div> 
+	</div>
+</header><!----></ng-include>
+<!----><ng-include src="'/pages/common/menu.html'"><style>
+.trn{
+margin-left:-15.90em !important;
+}
+.nav_home {
+width:115px;
+text-align:center;
+}
+
+.beta_menu {
+        margin: 0px 0em 0 -54em; 
+}
+
+@media screen and (min-width: 760px){
+        
+		ul.isubmenu.oth.us.es {
+            width: 100%;
+            margin-left: 0em !important;
+        }
+    }
+
+ @media screen and (min-width: 320px) and (max-width: 1200px) {
+	.nav_home {
+     width:100%;   
+     text-align:left;
+    }
+}
+.menuList .disabled:active {
+    pointer-events: none;
+}
+.menuList .disabledanchor {
+    cursor: not-allowed;
+    pointer-events: none;
+ }
+.menuList .disabledisplay {
+        display: none;
+} 
+</style>
+<!----><nav class="navbar navbar-default" data-ng-if="(!udata || udata.appStatus != 'C') &amp;&amp; (!hidemenu)">
+    <div class="container">
+        <div id="main" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" link="">
+                <li class="menuList" data-ng-class="{'active': ['dashboard','home'].indexOf(servers.NAV_COMPONENT) &gt; -1, 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                    <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/dashboard" target="_self" href="//services.gst.gov.in/services/auth/dashboard" class="ng-hide">Dashboard</a>
+                    <a data-ng-show="udata &amp;&amp; udata.role == 'panLogin'" data-ng-href="//reg.gst.gov.in/registration/auth/dashboard" target="_self" href="//reg.gst.gov.in/registration/auth/dashboard" class="ng-hide">Dashboard</a>
+                    <a class="nav_home" data-ng-show="!udata || udata.role == undefined" data-ng-href="//www.gst.gov.in/" target="_self" href="//www.gst.gov.in/">Home</a>
+                </li>
+                <!-- CR#22679 Enabling changes -->
+                <li class="dropdown drpdwn menuList" data-ng-class="{'active': servers.NAV_COMPONENT == 'services', 'disabled' :udata.disableMenu &amp;&amp; !enableServices}">
+                    <a data-ng-href="#" data-ng-class="{'disabledanchor' : udata.disableMenu &amp;&amp; !enableServices, 'dropdown-toggle' : !udata.disableMenu &amp;&amp; !enableServices}" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="#" class="dropdown-toggle">Services <span class="caret"></span></a>
+                    <ul class="dropdown-menu smenu" role="menu">
+                        <li class="has-sub" data-ng-hide="(udata.utype=='RF'  || udata.utype=='ES')" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}">
+                            <a data-ng-show="!udata || (udata &amp;&amp; udata.role == 'panLogin')" data-ng-href="//services.gst.gov.in/services/quicklinks/registration" data-ng-class="{'disabledanchor' :udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/quicklinks/registration" class="dropdown-toggle">Registration</a>
+							<!---->
+							<!----><div data-ng-if="!enableServices">
+								<a data-ng-show="udata &amp;&amp; udata.role == 'login'" target="_self" data-ng-href="//services.gst.gov.in/services/auth/quicklinks/registration" data-ng-class="{'disabledanchor' : udata.disableMenu &amp;&amp; !enableServices, 'dropdown-toggle' : !udata.disableMenu &amp;&amp; !enableServices}" style="display: block;text-decoration: none;" href="//services.gst.gov.in/services/auth/quicklinks/registration" class="ng-hide dropdown-toggle">Registration</a>	
+                            </div><!---->
+                             
+                            <ul class="isubmenu serv">
+                                <li data-ng-hide="udata.utype=='TR' || udata.utype=='UN'  || udata.utype == 'O' || udata.utype == 'TPCAEX' || udata.utype == 'NREX' || udata.utype == 'AR'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                    <a data-ng-href="//reg.gst.gov.in/registration" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration">New Registration</a>
+                                </li>
+                                <li data-ng-hide="udata.utype=='TR' || udata.utype == 'AR'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                   <a data-ng-show="udata" data-ng-href="//reg.gst.gov.in/registration/auth/clarifications" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/clarifications" class="ng-hide">Application for Filing Clarifications</a>
+                                   <a data-ng-show="!udata" data-ng-href="//reg.gst.gov.in/registration" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration">Application for Filing Clarifications</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login') &amp;&amp; udata.IS_MIGRATED == 'Y' &amp;&amp; udata.appStatus == 'A' &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype != 'TD' &amp;&amp; udata.utype != 'TS' &amp;&amp; udata.utype != 'NR' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype != 'AR'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/amend/core/amendbusinessdetail" data-ng-class="{'disabledanchor' :udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//reg.gst.gov.in/registration/auth/amend/core/amendbusinessdetail">Amendment of Registration Core Fields</a>
+                                </li>
+                               <!-----cr 24843-->
+                               <li data-ng-show="udata &amp;&amp; (udata.role == 'login')&amp;&amp; (udata.utype=='TP' || udata.regType=='NT' || udata.regType=='ID' || udata.regType=='CA' || udata.regType=='CO') &amp;&amp; (udata.isGeocoding == 'Y')" class="ng-hide">
+                                <a data-ng-href="//reg.gst.gov.in/registration/auth/geocode" target="_self" href="//reg.gst.gov.in/registration/auth/geocode">
+                                        Geocoding Business Addresses</a>
+                                </li>
+                                <!-----cr 24843 ends-------->
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login') &amp;&amp; udata.IS_MIGRATED == 'N' &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype != 'TD' &amp;&amp; udata.utype != 'TS' &amp;&amp; udata.utype != 'NR' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype != 'AR'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/amend/core/amendbusinessdetail" data-ng-class="{'disabledanchor' :udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//reg.gst.gov.in/registration/auth/amend/core/amendbusinessdetail">Amendment of Registration Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype=='UN'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/amend/uin/core/businessdetails" data-ng-class="{'disabledanchor' :udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//reg.gst.gov.in/registration/auth/amend/uin/core/businessdetails">Amendment of Registration Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login') &amp;&amp; udata.IS_MIGRATED == 'Y' &amp;&amp; udata.appStatus == 'A' &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype != 'TD' &amp;&amp; udata.utype != 'TS' &amp;&amp; udata.utype != 'NR' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype != 'AR'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/amend/noncore/business" data-ng-class="{'disabledanchor' :udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//reg.gst.gov.in/registration/auth/amend/noncore/business">Amendment of Registration Non - Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login') &amp;&amp; udata.IS_MIGRATED == 'N' &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype != 'TD' &amp;&amp; udata.utype != 'TS' &amp;&amp; udata.utype != 'NR' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype != 'AR'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/amend/noncore/business" data-ng-class="{'disabledanchor' :udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//reg.gst.gov.in/registration/auth/amend/noncore/business">Amendment of Registration Non - Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype=='UN'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/amend/uin/noncore/authsign" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/amend/uin/noncore/authsign">Amendment of Registration Non - Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; (udata.utype=='NR' || udata.utype=='NREX'|| udata.utype=='TD' || udata.utype=='TS' || udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/comnamend/noncore/basicdtls" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/comnamend/noncore/basicdtls">Amendment of Registration Non - Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype=='TR'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/comnamend/noncore/bank" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/comnamend/noncore/bank">Amendment of Registration Non - Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; (udata.utype=='TD' || udata.utype=='TS' || udata.utype=='NR' || udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/comnamend/core/basicdetails" data-ng-class="{'disabledanchor' :udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//reg.gst.gov.in/registration/auth/comnamend/core/basicdetails">Amendment of Registration Core Fields</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype!='UN'  &amp;&amp; udata.utype != 'TPCAEX' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/optcomp" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/optcomp">Application to Opt for composition Levy</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype!='TR'  &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype != 'TPCAEX' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/wtdrwcomp" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/wtdrwcomp">Application for Withdrawal from Composition Levy</a>
+                                </li>                              
+                                <li data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" data-ng-hide="udata.utype == 'ES'">
+                                    <a data-ng-show="udata &amp;&amp; udata.role == 'panLogin'" data-ng-href="//services.gst.gov.in/services/auth/appstatus" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/appstatus" class="ng-hide">Track Application Status</a>
+                                    <a data-ng-show="udata &amp;&amp; udata.role == 'login' || (udata.utype == 'TPCAEX' || udata.utype == 'NREX')" data-ng-href="//services.gst.gov.in/services/auth/appstatus" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/appstatus" class="ng-hide">Track Application Status</a>
+                                    <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/arnstatus" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/arnstatus">Track Application Status</a>
+                                </li>
+                                <li data-ng-show="!udata" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                    <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/trnDirect" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/trnDirect">Home State GSK selection for Promoter/Director of specific COBs</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.IS_MIGRATED == 'Y' &amp;&amp; udata.appStatus == 'A' &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype!='O' &amp;&amp;  udata.utype!='UN' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF'  &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a href="//reg.gst.gov.in/registration/auth/stockintim/stockintimmig" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self">Stock intimation for opting Composition Levy</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login') &amp;&amp; udata.IS_MIGRATED == 'Y' &amp;&amp; udata.appStatus == 'A' &amp;&amp; udata.utype!='TR'  &amp;&amp; (!udata.regType || (udata.regType != 'TD' &amp;&amp; udata.regType != 'TC' &amp;&amp; udata.regType != 'NR')) &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF' &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a href="//reg.gst.gov.in/registration/auth/common/cancellation" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self">Application for Cancellation of Registration</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login') &amp;&amp; udata.IS_MIGRATED == 'N' &amp;&amp; udata.utype!='TR' &amp;&amp;  (!udata.regType || (udata.regType != 'TD' &amp;&amp; udata.regType != 'TC' &amp;&amp; udata.regType != 'NR'))  &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF' &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a href="//reg.gst.gov.in/registration/auth/common/cancellation" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self">Application for Cancellation of Registration</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; (udata.utype=='NR' || udata.regType=='CA') &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a href="//reg.gst.gov.in/registration/auth/extnappln/business" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self">Application for Extension of Registration period by Casual/Non Resident Taxable Person</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' &amp;&amp; udata.IS_MIGRATED == 'N') &amp;&amp; (udata.utype=='TPCAEX' || udata.utype=='NREX')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+								<a data-ng-href="//reg.gst.gov.in/registration/auth/revoke" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/revoke">Application for Revocation of Cancelled Registration</a>
+								</li>
+                            </ul>
+                        </li>
+						  <li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype != 'RF' &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                            <a data-ng-href="//services.gst.gov.in/services/auth/quicklinks/ledgers" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/quicklinks/ledgers" class="dropdown-toggle">Ledgers</a>
+						   <div data-ng-class="{'disabledisplay' : udata.disableMenu &amp;&amp; enableServices}">
+                           <ul data-ng-class="{'isubmenu leg post': udata &amp;&amp; udata.utype!='O' ,'isubmenu leg oidr': udata &amp;&amp; udata.utype=='O'}">
+                                <li>
+                                    <a data-ng-href="//payment.gst.gov.in/payment/auth/ledger/cashledger" target="_self" href="//payment.gst.gov.in/payment/auth/ledger/cashledger">Electronic Cash Ledger</a>
+                                </li>
+                                 <!---->
+                                <li>
+                                    <a data-ng-href="//return.gst.gov.in/returns/auth/ledger/taxledger" target="_self" href="//return.gst.gov.in/returns/auth/ledger/taxledger">Electronic Liability Register</a>
+                                </li>
+								<li data-ng-hide="udata.utype == 'TC'">
+                                    <a data-ng-href="//payment.gst.gov.in/payment/auth/ledger/paymenttowardsdemand" target="_self" href="//payment.gst.gov.in/payment/auth/ledger/paymenttowardsdemand">Payment towards Demand</a>
+                                </li>
+								<li>
+									<a target="_self" data-ng-href="//statement.gst.gov.in/ledgersw/auth/ledgers/negliab" href="//statement.gst.gov.in/ledgersw/auth/ledgers/negliab">Negative liability statement - Composition Taxpayers</a>
+								</li>
+								<!-- CR21773C -->
+                                    <li>
+                                        <a href="//statement.gst.gov.in/ledgersw/auth/ledgers/negliabreg" target="_self">Negative
+                                            liability statement - Regular Taxpayers</a>
+                                    </li>
+								<!--CR-21773B : Addition of Electronic Credit Reversal and Re-claimed statement navigation link-->
+                                    <!---->
+                                    <!--CR26198-->
+                                    <!---->
+                            </ul>
+							</div>
+						</li>
+                       <li class="has-sub ng-hide" data-ng-show="(udata &amp;&amp; udata.role == 'panLogin') &amp;&amp; (udata.utype != 'RF' &amp;&amp; udata.utype != 'ES') &amp;&amp; (udata.utype=='NR' || (udata.utype == 'TP' &amp;&amp; udata.regType=='CA'))" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                            <a data-ng-href="//services.gst.gov.in/services/quicklinks/ledgers" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/quicklinks/ledgers" class="dropdown-toggle">Ledgers</a>
+                            <ul class="isubmenu leg post">
+                                <li>
+                                    <a data-ng-href="//payment.gst.gov.in/payment/ledger/cashledger" target="_self" href="//payment.gst.gov.in/payment/ledger/cashledger">Electronic Cash Ledger</a>
+                                </li>
+                            </ul>
+                        </li>
+								
+						<li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF' &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+							 <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/quicklinks/returns" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/quicklinks/returns" class="ng-hide dropdown-toggle">Returns</a>
+							<div data-ng-class="{'disabledisplay' : udata.disableMenu &amp;&amp; enableServices}">
+                            <ul data-ng-class="{'isubmenu ret post': udata &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype!='UN' ,'isubmenu ret  oidr': udata &amp;&amp; udata.utype=='O','isubmenu ret  uinu': udata &amp;&amp; udata.utype=='UN'}" data-ng-hide="udata.utype=='TR'">
+                               <li>
+									<a data-ng-href="//return.gst.gov.in/returns/auth/dashboard" target="_self" href="//return.gst.gov.in/returns/auth/dashboard">Returns Dashboard</a>
+								</li>
+
+								<li>
+                                    <a data-ng-href="//return.gst.gov.in/returns/auth/efiledReturns" target="_self" href="//return.gst.gov.in/returns/auth/efiledReturns">View Filed Returns</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//return.gst.gov.in/returns/auth/trackreturnstatus" target="_self" href="//return.gst.gov.in/returns/auth/trackreturnstatus">Track Return Status</a>
+                                </li>
+                                <!----><li data-ng-if="udata.utype !== 'CO' &amp;&amp; udata.utype!='TD' &amp;&amp; udata.utype !== 'TS' &amp;&amp; udata.utype !== 'O' &amp;&amp; udata.utype !== 'UN' &amp;&amp;  udata.utype !='TPCAEX' &amp;&amp; udata.utype !='NREX'">
+                                    <a data-ng-href="//return.gst.gov.in/returns/auth/transition/trans1" target="_self" href="//return.gst.gov.in/returns/auth/transition/trans1">Transition Forms</a>
+                                </li><!---->
+                                <li data-ng-hide="udata.utype=='UN' || udata.utype=='TD' || udata.utype == 'O' || udata.utype =='TPCAEX' || udata.utype =='NREX' ">
+                                    <a data-ng-href="//return.gst.gov.in/returns2/auth/itcform/links" target="_self" href="//return.gst.gov.in/returns2/auth/itcform/links">ITC Forms</a>
+                                </li>
+								<!---->
+                                <!---->
+                                <!--Comparison report CR 17153 - adding the link to landing page changes begin-->
+                                <!---->
+                                <!--Comparison report CR 17153 - adding the link to landing page changes end-->
+                                <!--Optin for Quarterly Return link CR- 18145-->
+                                <!---->
+                                <!--Optin for Quarterly Return link CR- 18145 End-->
+                  				<!-- CR-23810 Liability Mismatch Starts -->
+                                <!---->
+
+                                <!-- CR 25787 IMS Dashboard-->
+                                <!---->
+                                <!-- CR 25787 IMS Dashboard-->
+
+                                <!-- CR-23810 Liability Mismatch End -->
+                                <!-- DO NOT REMOVE THIS CODE CR 25786 Credit Limit Check for High Risk Taxpayer Starts -->
+                                <!-- <li
+                                data-ng-if="udata && udata.role == 'login' && udata.utype == 'TP' && (udata.regType == 'NT' || udata.regType == 'CA' || udata.regType == 'CO' || udata.regType=='TP' || udata.sezFlag)">
+                                    <a target="_self" data-ng-href="{{servers.GST_RETURNS_R1_URL}}/returns/auth/increasingcreditlimit/alreadyraisedreq">Application for increasing credit limit</a>
+                                </li> -->
+                                <!-- DO NOT REMOVE THIS CODE CR 25786 Credit Limit Check for High Risk Taxpayer Ends  -->
+                                <!-- CR26009 Changes -->
+                                <!---->
+                            </ul>
+							</div>
+                        </li>
+                        <li class="has-sub" data-ng-hide="udata.utype == 'RF' || udata.utype == 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                            <a data-ng-show="(udata &amp;&amp; udata.role == 'panLogin')" data-ng-href="//services.gst.gov.in/services/quicklinks/payments/trn" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/quicklinks/payments/trn" class="ng-hide dropdown-toggle">Payments</a>
+							 <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/quicklinks/payments" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/quicklinks/payments" class="dropdown-toggle">Payments</a>
+							 <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/quicklinks/payments" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/quicklinks/payments" class="ng-hide dropdown-toggle">Payments</a>
+							 <div data-ng-class="{'disabledisplay' : udata.disableMenu &amp;&amp; enableServices}">
+							   <ul class="isubmenu pay" data-ng-class="{'post': udata &amp;&amp; udata.role == 'login'  &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype!='AR', 'ar': udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'AR', 'pan': udata &amp;&amp; udata.role == 'panLogin' &amp;&amp; udata.utype!='UN', 'oidr': udata &amp;&amp; udata.utype=='O', 'uinu': udata &amp;&amp; udata.utype=='UN' &amp;&amp; udata.role == 'login','uinu pre': udata &amp;&amp; udata.utype=='UN' &amp;&amp;  udata.role == 'panLogin'}">
+                                <li>
+                                    <a data-ng-show="!udata" data-ng-href="//payment.gst.gov.in/payment/" target="_self" href="//payment.gst.gov.in/payment/">Create Challan</a>
+                                    <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//payment.gst.gov.in/payment/auth/" target="_self" href="//payment.gst.gov.in/payment/auth/" class="ng-hide">Create Challan</a>
+									 <a data-ng-show="(udata &amp;&amp; udata.role == 'panLogin')" data-ng-href="//payment.gst.gov.in/payment/challanhistory" target="_self" href="//payment.gst.gov.in/payment/challanhistory" class="ng-hide">Challan History</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype !='NREX'" class="ng-hide">
+                                    <a data-ng-href="//payment.gst.gov.in/payment/auth/savedchallan" target="_self" href="//payment.gst.gov.in/payment/auth/savedchallan">Saved Challans</a>
+                                </li>
+                                <li>
+                                    <a data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype !='NREX'" data-ng-href="//payment.gst.gov.in/payment/auth/challanhistory" target="_self" href="//payment.gst.gov.in/payment/auth/challanhistory" class="ng-hide">Challan History</a>
+                                    <a data-ng-show="!udata " data-ng-href="//payment.gst.gov.in/payment/trackpayment" target="_self" href="//payment.gst.gov.in/payment/trackpayment">Track Payment Status</a>
+                                    
+                                </li>
+								 <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' ) &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX' &amp;&amp; udata.utype != 'AR'" class="ng-hide">
+									<a data-ng-href="//services.gst.gov.in/litserv/auth/deferred/instalmentpayment" target="_self" href="//services.gst.gov.in/litserv/auth/deferred/instalmentpayment">Application for Deferred Payment/Payment in Instalments</a>
+								</li>
+								 <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' ) &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX' &amp;&amp; udata.utype != 'AR'" class="ng-hide">
+									<a data-ng-href="//payment.gst.gov.in/payment/auth/ledger/instalmentcalendar" target="_self" href="//payment.gst.gov.in/payment/auth/ledger/instalmentcalendar">Instalment Calendar</a>
+                                </li>
+                                <li>
+                                    <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/grievance" target="_self" href="//services.gst.gov.in/services/grievance">Grievance against Payment(GST PMT-07)</a>
+                                    <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/grievance" target="_self" href="//services.gst.gov.in/services/auth/grievance" class="ng-hide">Grievance against Payment(GST PMT-07)</a>
+                                </li>
+
+							</ul>
+							</div>
+
+                        </li>
+						
+                        <li class="has-sub" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}">
+                            <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/quicklinks/userservices" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/quicklinks/userservices" class="dropdown-toggle">User Services</a>
+							<!---->
+							<!----><div data-ng-if="!enableServices">
+                            <a data-ng-show="udata &amp;&amp; (udata.role == 'login'||udata.role == 'panLogin')" target="_self" data-ng-href="//services.gst.gov.in/services/auth/quicklinks/userservices" data-ng-class="{'disabledanchor' : udata.disableMenu &amp;&amp; !enableServices, 'dropdown-toggle' : !udata.disableMenu &amp;&amp; !enableServices}" style="display: block;text-decoration: none;" href="//services.gst.gov.in/services/auth/quicklinks/userservices" class="ng-hide dropdown-toggle">User Services</a>
+							</div><!---->
+							   <ul class="isubmenu services" data-ng-class="{'services': !udata,'oth': udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype != 'UN','isubmenu pay post': udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'O','isubmenu ar': udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'AR','isubmenu us uinu': udata  &amp;&amp; udata.utype == 'UN' &amp;&amp; udata.role == 'login','isubmenu us uinu pre': udata  &amp;&amp; udata.utype == 'UN' &amp;&amp; udata.role == 'panLogin', 'isubmenu us rf': udata  &amp;&amp; udata.utype == 'RF','isubmenu us es': udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'ES'}">
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O') &amp;&amp; udata.utype!='ES'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/savedapp" data-ng-class="{'disabledanchor' : udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//services.gst.gov.in/services/auth/savedapp">My Saved Applications</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' ) &amp;&amp; udata.utype!='ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/auth/drc03register" data-ng-class="{'disabledanchor' : udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/auth/drc03register">DRC-03 Register</a>
+                                </li>
+
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='O')&amp;&amp; udata.utype!='ES' &amp;&amp; udata.utype != 'AR'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services2/auth/getlistofnotices" data-ng-class="{'disabledanchor' : udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//services.gst.gov.in/services2/auth/getlistofnotices">Notices / Intimations Issued</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' ) &amp;&amp; udata.utype!='ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                <a data-ng-href="//services.gst.gov.in/litserv/auth/case/search" data-ng-class="{'disabledanchor' : udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/auth/case/search">My Applications</a> 
+                                </li>
+                                 <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.utype=='UN' || udata.utype=='O') &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/certs" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/certs">View/Download Certificates</a>
+                                </li>
+                               <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O') &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'ES'" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/notices" data-ng-class="{'disabledanchor' : udata.disableMenu &amp;&amp; !enableServices}" target="_self" href="//services.gst.gov.in/services/auth/notices">View Notices and Orders</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O') &amp;&amp; udata.utype != 'AR'  &amp;&amp; udata.utype!='ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/submissions" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/submissions">View My Submissions</a>
+                                </li>
+                                 <li data-ng-show="udata &amp;&amp; udata.role == 'panLogin' &amp;&amp; udata.utype!='TR'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/auth/register/dsc" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/auth/register/dsc">Register / Update DSC</a>
+                                </li>
+                                <!-- <li data-ng-show="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O')">
+                                    <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/contacts">Contacts</a>
+                                </li>
+                                
+                                <li ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O')">
+                                    <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/contacts/">Contacts</a>
+                                </li>-->
+                                   <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O' ) &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/searchhsnsac" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/searchhsnsac">Search HSN Code</a>
+                                </li>
+                                <li ng-hide="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                    <a data-ng-href="//services.gst.gov.in/services/searchhsnsac" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/searchhsnsac">Search HSN Code</a>
+                                </li>
+								<li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/holiday" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/holiday">Holiday List</a>
+                                </li>
+								
+								<li ng-hide="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+									<a data-ng-href="//services.gst.gov.in/services/holiday" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/holiday">Holiday List</a>
+                                </li>
+								<li data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'AR' &amp;&amp; udata.utype!='ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/listoftaxpayer" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/listoftaxpayer">Search Taxpayer Opted In / Out of Composition</a>
+                                </li>
+                                <!--<li ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin')">
+                                    <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/officeaddress/">Search Office Addresses</a>
+                                </li>-->
+                              <li ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' ||udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/feedbackpost" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/feedbackpost">Feedback</a>
+                                </li>
+                                <!--<li ng-show="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' ||udata.utype=='O')">
+                                    <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/grievance">Grievance / Complaints</a>
+                                </li>-->
+
+                               <!-- <li data-ng-hide="udata && (udata.role == 'login' || udata.role == 'panLogin' || udata.utype== 'TPCAEX'|| udata.utype== 'NREX')">
+                               
+                                    <a data-ng-href="{{servers.GST_REGISTRATION_R1_URL}}/registration/advanceruling">Generate User Id for Advance Ruling</a>
+                                </li> -->
+								<li data-ng-show="!udata" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                    <a data-ng-href="//reg.gst.gov.in/registration/generateuid" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//reg.gst.gov.in/registration/generateuid">Generate User ID for Unregistered Applicant</a>
+                                </li>
+								<li data-ng-show="(udata &amp;&amp; (udata.role == 'login' &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX'  &amp;&amp; udata.utype != 'AR'  &amp;&amp; udata.utype != 'ES') &amp;&amp; (udata.regType=='CO' || udata.regType=='ID' || udata.regType=='NT' || udata.regType=='TP'))" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services2/auth/getlutform" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services2/auth/getlutform">Furnish Letter of Undertaking (LUT)</a>
+                                </li>
+                                <li data-ng-show="(udata &amp;&amp; (udata.role == 'login' &amp;&amp; udata.utype!='TPCAEX' &amp;&amp; udata.utype!='NREX'  &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'ES') &amp;&amp; (udata.regType=='CO' || udata.regType=='ID' || udata.regType=='NT' || udata.regType=='TP'))" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/auth/case/search" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/auth/case/search">View My Submitted LUTs</a>
+                                </li>
+                               <li ng-hide="udata &amp;&amp; udata.role == 'login'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                    <a data-ng-href="//services.gst.gov.in/services/locategstp" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/locategstp">Locate GST Practitioner (GSTP)</a>
+                                </li>
+                                 <li ng-show="udata &amp;&amp; (udata.role == 'login' ||udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/locategstp" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/locategstp">Locate GST Practitioner (GSTP)</a>
+                                </li>
+                                <li ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin') &amp;&amp; (udata.utype== 'TP' || udata.utype=='NR'||udata.utype== 'TD'||udata.utype== 'TS'||udata.utype== 'O' || udata.utype== 'TPCAEX'||udata.utype== 'NREX' || udata.utype=='AR' || udata.utype=='UN') " data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/engdisenggstp" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/engdisenggstp">Engage / Disengage GST Practitioner (GSTP)</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.regType=='TP' || udata.regType=='NT' || udata.regType=='CA') &amp;&amp; udata.utype!='NREX'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//return.gst.gov.in/returns2/auth/itc02/pendingactions" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//return.gst.gov.in/returns2/auth/itc02/pendingactions">ITC02-Pending for action</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; udata.utype != 'ES' &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/auth/viewadnlntcord" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/auth/viewadnlntcord">View Additional Notices/Orders</a>
+                                </li>
+								<li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype=='UN' || udata.utype=='O')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+									<a data-ng-href="//services.gst.gov.in/litserv/auth/api/case/hrng/get" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/auth/api/case/hrng/get">Cause List</a>
+								</li>
+								<li ng-hide="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' || udata.utype == 'AR')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+									<a data-ng-href="//services.gst.gov.in/litserv/case/hrng/get" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/case/hrng/get">Cause List</a>
+								</li>
+								<li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin') &amp;&amp; (!udata.regType || (udata.regType != 'TD' &amp;&amp; udata.regType != 'TC' )) &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype != 'NR' &amp;&amp; udata.utype!='ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+									<a data-ng-href="//prodcc.gst.gov.in/cchannel/auth/viewnotification" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//prodcc.gst.gov.in/cchannel/auth/viewnotification">Communication Between Taxpayers</a>
+								</li>
+                                <!---->
+                                <li data-ng-show="udata &amp;&amp; udata.utype != 'ES' &amp;&amp;(udata.role == 'login' || udata.role == 'panLogin' || udata.utype == 'ES')" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//return.gst.gov.in/returns/auth/boe/search" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//return.gst.gov.in/returns/auth/boe/search">Search BoE</a>
+                                </li>
+                                <li data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' )" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/ar/postordersearch" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/ar/postordersearch">Search Advance Ruling</a>
+                                </li> 
+                                <li data-ng-show="!udata" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/ar/ordersearch" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/ar/ordersearch">Search Advance Ruling</a>
+                                </li>
+
+                                
+								<!-- CR-23369 --> 
+                                <li data-placement="top" data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'TS'" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/eidsturnovertable" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/eidsturnovertable">View turnover of enrolment IDs</a>
+                                </li>
+                                <li data-placement="top" data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'ES'" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/suppliesbyecodetails" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/suppliesbyecodetails">
+                                    <span>Supplies reported by e-commerce operators (ECOs) and</span> 
+                                    <br> 
+                                    <span style="padding-left:1.5rem;">Annual Turnover details</span></a>
+                                </li>
+								<!-- CR-22814A --> 
+								<li data-ng-show="udata &amp;&amp; udata.utype != 'ES' &amp;&amp; (udata.role == 'login') &amp;&amp; (udatasp.appStatus == 'C' || udata.appStatus == 'A') &amp;&amp; udata.utype!='TR' &amp;&amp; udata.utype != 'TD' &amp;&amp; udata.utype != 'TS' &amp;&amp; udata.utype != 'NR' &amp;&amp; udata.utype != 'NREX' &amp;&amp; udata.utype!='UN' &amp;&amp; udata.utype!='O' &amp;&amp; udata.utype != 'AR' &amp;&amp; udata.utype != 'RF' &amp;&amp; udata.regType!='ID' &amp;&amp; udata.regType!='CO' &amp;&amp; udata.regType!='CA' || (!!udata.sezFlag &amp;&amp; (udatasp.appStatus == 'C' || udata.appStatus == 'A'))" data-ng-class="{'disabled' :udata.disableMenu &amp;&amp; !enableServices}" data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/auth/viewpmt03a" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/litserv/auth/viewpmt03a">View PMT-03A</a>
+                                </li>
+                                
+								<!-- CR-23964 | CR-25826 --> 
+                                <li data-ng-show="udata &amp;&amp; !udata.sezFlag &amp;&amp; (udata.appStatus == 'A' || udata.appStatus == 'C') &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' ) &amp;&amp; (['NT','CO','CA','TP'].indexOf(udata.regType)&gt;=0) " data-placement="top" class="ng-hide">
+                                    <a data-ng-href="//services.gst.gov.in/services/auth/gta" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/gta">GTA (Goods Transport Agencies)</a>
+                                </li>
+
+                                <!-- CR-23637 --> 
+                                <li data-placement="top">
+                                    <a data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin' ) &amp;&amp; udata.utype!='ES'" data-ng-href="//services.gst.gov.in/services/auth/verifyRfn" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/verifyRfn" class="ng-hide">Verify RFN</a>
+                                    <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/verifyRfn" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/verifyRfn">Verify RFN</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li class="has-sub" data-ng-hide="udata.utype=='AR' || udata.utype == 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                            <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/quicklinks/refunds" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/quicklinks/refunds" class="ng-hide dropdown-toggle">Refunds</a>
+							<a data-ng-show="udata &amp;&amp; udata.role == 'panLogin'" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" class="ng-hide dropdown-toggle">Refunds</a>
+                            <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/quicklinks/refunds" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/quicklinks/refunds" class="dropdown-toggle">Refunds</a>
+						<div data-ng-class="{'disabledisplay' : udata.disableMenu &amp;&amp; enableServices}">
+						  <ul class="isubmenu ref" data-ng-class="{'isubmenu ref ntp': udata &amp;&amp; udata.utype!='UN','isubmenu ref uinu': udata &amp;&amp; udata.utype=='UN','isubmenu ref rf': udata &amp;&amp; udata.utype == 'RF'}">
+                                <li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; udata.role == 'login'">
+                                    <a data-ng-href="//refund.gst.gov.in/refunds/auth/refunddashboard" target="_self" href="//refund.gst.gov.in/refunds/auth/refunddashboard">Application for Refund</a>
+                                </li>
+                                <li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype !== 'RF'">
+                                    <a data-ng-href="//services.gst.gov.in/litserv/auth/clainRfndInfo" target="_self" href="//services.gst.gov.in/litserv/auth/clainRfndInfo">Refund pre-application form</a>
+                                </li>
+                                <li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; (udata.role == 'login' || udata.role == 'panLogin')">
+                                    <a data-ng-href="//refund.gst.gov.in/refunds/auth/savedapplication" target="_self" href="//refund.gst.gov.in/refunds/auth/savedapplication">My Saved/Filed Applications</a>
+                                </li>
+                                <li class="has-sub">
+                                    <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/trackstatus" target="_self" href="//services.gst.gov.in/services/auth/trackstatus" class="ng-hide">Track Application Status</a>
+                                    <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/trackstatus" target="_self" href="//services.gst.gov.in/services/trackstatus">Track Application Status</a>
+                                </li>
+                                <li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; udata.role == 'login' &amp;&amp; (udata.regType=='TP' || udata.regType=='NT' || udata.regType=='CA') &amp;&amp; udata.utype!='ES'">
+                                    <a data-ng-href="//refund.gst.gov.in/refunds/auth/trackInvStatus" target="_self" href="//refund.gst.gov.in/refunds/auth/trackInvStatus">Track status of invoice data to be shared with ICEGATE</a>
+                                </li>
+								<li class="has-sub ng-hide" data-ng-show="udata &amp;&amp; udata.role == 'login'">
+                                    <a data-ng-href="//refund.gst.gov.in/refunds/auth/intmtRfdNotReceived" target="_self" href="//refund.gst.gov.in/refunds/auth/intmtRfdNotReceived">Intimation on account of Refund not received</a>
+                                </li>
+                            </ul>
+							</div>
+                        </li>
+                        <li class="has-sub" data-ng-hide="udata.utype == 'RF' || udata.utype == 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+						    <a data-ng-href="//services.gst.gov.in/services/ewaybill/ewaybillsystem" data-ng-class="{'disabledanchor' : udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/ewaybill/ewaybillsystem">e-Way Bill System</a>
+                        </li>
+                        <li class="has-sub" data-ng-hide="udata.utype == 'ES'" data-ng-class="{'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+						    <a data-ng-show="udata &amp;&amp; udata.role == 'login'" data-ng-href="//services.gst.gov.in/services/auth/trackstatus" data-ng-class="{'disabledanchor' : udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/trackstatus" class="ng-hide">Track Application Status</a>
+							 <a data-ng-show="!udata" data-ng-href="//services.gst.gov.in/services/trackstatus" data-ng-class="{'disabledanchor' : udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/trackstatus">Track Application Status</a>
+							 <a data-ng-show="(udata &amp;&amp; udata.role == 'panLogin')" data-ng-href="//services.gst.gov.in/services/auth/trackstatus/trn" data-ng-class="{'disabledanchor' : udata.disableMenu}" target="_self" href="//services.gst.gov.in/services/auth/trackstatus/trn" class="ng-hide">Track
+                                Application Status</a>
+
+                                  
+						</li>
+                    </ul>
+                </li>
+                <li class="dropdown drpdwn menuList" data-ng-class="{'active': servers.NAV_COMPONENT == 'gstlaw', 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                <a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//services.gst.gov.in/services/gstlaw/gstlawlist" target="_blank" href="//services.gst.gov.in/services/gstlaw/gstlawlist" rel="noopener noreferrer">GST Law </a>
+                  <!--     <ul class="dropdown-menu smenu not" role="menu" data-ng-show="udata && udata.role == 'login'">
+                       <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/acts">Acts</a>
+                        </li>
+						  <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/rules">Rules</a>
+                        </li>
+                        <li class="has-sub">
+                            <a ng-show="(udata && udata.utype!='O')" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/notifications">Notifications</a>
+                            <a ng-show="(udata && udata.utype!='O')" ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="http://www.cbec.gov.in/htdocs-cbec/gst/index" >Notifications</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/circulars">Circulars</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/amendments">Amendments</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/pressreleases">Press Release</a>
+                        </li>
+
+                    </ul> -->
+                    
+<!--                     <ul class="dropdown-menu smenu not" role="menu" ng-hide="udata && udata.role == 'login'">
+                    <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/acts">Acts</a>
+                        </li>
+						<li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/rules">Rules</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/notifications">Notifications</a>
+                            <a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="http://www.cbec.gov.in/htdocs-cbec/gst/index" >Notifications</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/circulars">Circulars</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/amendments">Amendments</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/pressreleases">Press Release</a>
+                        </li>
+
+                    </ul> -->
+                </li>
+               <!-- <li class="dropdown drpdwn" data-ng-class="{'active': servers.NAV_COMPONENT == 'acts'}">
+                    <a data-ng-href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Acts & Rules <span class="caret"></span></a>
+                    <ul class="dropdown-menu smenu act" role="menu" data-ng-show="udata && udata.role == 'login'">
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/acts">Acts</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/auth/rules">Rules</a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="dropdown-menu smenu act" role="menu" ng-hide="udata && udata.role == 'login'">
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/acts">Acts</a>
+                        </li>
+                        <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/rules">Rules</a>
+                        </li>
+                    </ul>
+                </li>-->
+                <li class="has-sub drpdwn menuList" data-ng-class="{'active': servers.NAV_COMPONENT == 'downloads', 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                    <a data-ng-href="#" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="#" class="dropdown-toggle">
+					Downloads <span class="caret"></span>
+					</a>
+                    <ul class="dropdown-menu smenu down pre" role="menu">
+                        <li class="has-sub">
+                            <a target="_self">Offline Tools</a>
+                            <ul class="isubmenu down">	
+
+                                <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/returns" target="_self" href="//www.gst.gov.in/download/returns">Returns Offline Tool</a>
+                                </li>
+                                <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr2b" target="_self" href="//www.gst.gov.in/download/gstr2b">Matching Offline Tool</a>
+                                </li>
+                                <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/trans1b" target="_self" href="//www.gst.gov.in/download/trans1b">Tran-1 Offline Tools</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/trans2" target="_self" href="//www.gst.gov.in/download/trans2">Tran-2 Offline Tools</a>
+                                </li>
+                                 <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr3b" target="_self" href="//www.gst.gov.in/download/gstr3b">GSTR3B Offline Utility</a>
+                                </li>
+
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/itc01" target="_self" href="//www.gst.gov.in/download/itc01">ITC01 Offline Tool</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/itc03" target="_self" href="//www.gst.gov.in/download/itc03">ITC03 Offline Tool</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/itc04" target="_self" href="//www.gst.gov.in/download/itc04">ITC04 Offline Tool</a>
+                                </li>
+                                <li>
+									<a data-ng-href="//tutorial.gst.gov.in/downloads/advancerulingtaxpayer.zip" target="_self" href="//tutorial.gst.gov.in/downloads/advancerulingtaxpayer.zip">GST ARA 01 - Application for Advance Ruling</a>								
+								</li>
+								 <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr4/offline" target="_self" href="//www.gst.gov.in/download/gstr4/offline">GSTR-4 Offline Tool (Quarterly filing)</a>
+                                </li>
+                                                                
+                                 <li>
+                                    <a data-ng-href="//tutorial.gst.gov.in/offlineutilities/returns/GSTR_6_Offline_Utility.zip" target="_self" href="//tutorial.gst.gov.in/offlineutilities/returns/GSTR_6_Offline_Utility.zip">GSTR 6 Offline Tool With Amendments</a>
+                                </li>
+                                <li>
+                                    <a data-ng-href="//tutorial.gst.gov.in/offlineutilities/returns/GSTR_11_Offline_Utility.zip" target="_self" href="//tutorial.gst.gov.in/offlineutilities/returns/GSTR_11_Offline_Utility.zip">GSTR 11 Offline Tool</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr7" target="_self" href="//www.gst.gov.in/download/gstr7">GSTR7 Offline Utility</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr8" target="_self" href="//www.gst.gov.in/download/gstr8">GSTR8 Offline Tool</a>
+                                </li>
+                                <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/srm1" target="_self" href="//www.gst.gov.in/download/srm1">SRM-I Offline Tool</a>
+                                </li>
+                                <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/srm2" target="_self" href="//www.gst.gov.in/download/srm2">SRM-II Offline Tool</a>
+                                </li>
+								 <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr10" target="_self" href="//www.gst.gov.in/download/gstr10">GSTR10 Offline Tool</a>
+                                </li>
+                                <li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr9" target="_self" href="//www.gst.gov.in/download/gstr9">GSTR-9 Offline Tool</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr9a" target="_self" href="//www.gst.gov.in/download/gstr9a">GSTR-9A Offline Tool</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr9c" target="_self" href="//www.gst.gov.in/download/gstr9c">GSTR-9C Offline Tool</a>
+                                
+                                </li> 
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr4x" target="_self" href="//www.gst.gov.in/download/gstr4x">GSTR-4 Offline Tool (Annual)</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//tutorial.gst.gov.in/downloads/drc22AOffline.zip" target="_self" href="//tutorial.gst.gov.in/downloads/drc22AOffline.zip">GST DRC-22A - Application for Objection to Provisional Attachment Order</a>
+                                </li>
+								<li>
+                                    <a data-ng-href="//www.gst.gov.in/download/gstr2x" target="_self" href="//www.gst.gov.in/download/gstr2x">TDS &amp; TCS Credit Received Offline Tool</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!---->
+						<!-- CR-23151-C --> 
+                        <!----><li ng-if="!udata || udata.utype=='ES'" class="has-sub">
+                            <a data-ng-href="//www.gst.gov.in/download/gststatistics" href="//www.gst.gov.in/download/gststatistics">GST Statistics</a>
+                        </li><!---->
+                    </ul>
+                </li>
+				 <li class="dropdown drpdwn menuList" data-ng-class="{'active': servers.NAV_COMPONENT == 'searchtaxpayer', 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                    <a data-ng-href="#" data-ng-class="{'disabledanchor' : udata.disableMenu, 'dropdown-toggle' : !udata.disableMenu}" data-toggle="dropdown" role="button" aria-expanded="false" target="_self" href="#" class="dropdown-toggle">Search Taxpayer <span class="caret"></span></a>
+                    <ul class="dropdown-menu smenu searchtxp ng-hide" data-ng-class="{'post' : udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype != 'AR', 'ar': udata &amp;&amp; udata.role == 'login' &amp;&amp; udata.utype == 'AR'}" role="menu" data-ng-show="udata &amp;&amp; udata.role == 'login'">
+                        <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/auth/searchtp" target="_self" href="//services.gst.gov.in/services/auth/searchtp">Search by GSTIN/UIN</a>
+                        </li>
+                        <!-- Search by Pan-->
+                        <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/auth/searchtpbypan" target="_self" href="//services.gst.gov.in/services/auth/searchtpbypan">Search by PAN</a>
+                        </li>
+                        <!-- Search by Pan-->
+                        <!-- Search by Temporary Id-->
+                          <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/auth/searchsmregtp" target="_self" href="//services.gst.gov.in/services/auth/searchsmregtp">Search Temporary ID</a>
+                        </li>
+                        <!-- Search by Temporary Id-->
+                        <!-- <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/track-provisional-id-status">Search Migrated Taxpayer</a>
+                        </li> -->
+                        <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/auth/listoftaxpayer" target="_self" href="//services.gst.gov.in/services/auth/listoftaxpayer">Search Composition Taxpayer</a>
+                        </li>                     
+
+                    </ul>
+                    
+                    <ul class="dropdown-menu smenu searchtxp" role="menu" ng-hide="udata &amp;&amp; udata.role == 'login'">
+                        <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/searchtp" target="_self" href="//services.gst.gov.in/services/searchtp">Search by GSTIN/UIN</a>
+                        </li>
+                        <!-- Search by Pan-->
+                        <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/searchtpbypan" target="_self" href="//services.gst.gov.in/services/searchtpbypan">Search by PAN</a>
+                        </li>
+                        <!-- Search by Pan-->
+                         <!-- Search by Temporary Id-->
+                         <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/searchsmregtp" target="_self" href="//services.gst.gov.in/services/searchsmregtp">Search Temporary ID</a>
+                        </li>
+                        <!-- Search by Temporary Id-->
+                        <!-- <li class="has-sub">
+                            <a data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/track-provisional-id-status">Search Migrated Taxpayer</a>
+                        </li> -->
+                        <li class="has-sub">
+                            <a data-ng-href="//services.gst.gov.in/services/listoftaxpayer" target="_self" href="//services.gst.gov.in/services/listoftaxpayer">Search Composition Taxpayer</a>
+                        </li>  
+                    </ul>
+                </li> 
+				
+			  <li class="menuList" data-ng-class="{'active': servers.NAV_COMPONENT == 'help', 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                    <a role="button" aria-expanded="false" data-ng-href="//services.gst.gov.in/services/HelpandTaxpayer/HelpandTaxpayerfacilities" target="_self" href="//services.gst.gov.in/services/HelpandTaxpayer/HelpandTaxpayerfacilities">Help and Taxpayer Facilities</a>
+				</li>
+				  <li class="dropdown drpdwn menuList" data-ng-class="{'active': servers.NAV_COMPONENT == 'einvoice', 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+                    <a data-ng-href="//einvoice.gst.gov.in/einvoice/dashboard" target="_self" href="//einvoice.gst.gov.in/einvoice/dashboard">e-Invoice</a>
+                </li>
+                <li class="dropdown drpdwn menuList active" data-ng-class="{'active': servers.NAV_COMPONENT == 'advisories', 'disabled' :udata.disableMenu}" data-toggle="tooltip" data-placement="top">
+					<a data-ng-href="//services.gst.gov.in/services/advisory/advisoryandreleases" target="_self" href="//services.gst.gov.in/services/advisory/advisoryandreleases">News and Updates</a>
+				</li>
+                <li class="mnav" data-ng-show="!udata || udata.role == undefined"><a data-ng-href="//reg.gst.gov.in/registration" target="_self" href="//reg.gst.gov.in/registration"> Register</a></li>
+                <li class="mnav" data-ng-show="!udata || udata.role == undefined"><a data-ng-href="//services.gst.gov.in/services/login" data-ng-click="clearPostPP()" target="_self" href="//services.gst.gov.in/services/login">Login</a></li>
+                <li class="mnav ng-hide" data-ng-show="udata.role =='login' || udata.role == 'panLogin'"><a data-ng-href="//services.gst.gov.in/services/auth/myprofile" target="_self" href="//services.gst.gov.in/services/auth/myprofile">MyProfile</a></li>
+                <li class="mnav ng-hide" data-ng-show="udata.role =='login' || udata.role == 'panLogin'"><a data-ng-href="//services.gst.gov.in/services/logout" data-ng-click="clearPostPP()" target="_self" href="//services.gst.gov.in/services/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav><!---->
+<!----></ng-include>
+</div>
+<div class="content-wrapper">
+<div class="dimmer-holder" style="display: none;">
+<div id="dimmer"></div>
+</div>
+<div class="container">
+<div class="mypage">
+<div class="row" data-ng-controller="transctrl" data-ng-init="init('services')">
+<div class="col-xs-10">
+<div data-breadcrumb="" data-path="//www.gst.gov.in/" data-name="Home"><ol class="breadcrumb" data-ng-controller="crumbCtrl"><li><a target="" href="//www.gst.gov.in/" data-ng-bind="name">Home</a></li><!----><li data-ng-repeat="breadcrumb in breadcrumbs.getAll()"><ng-switch on="$last"> <!----><span ng-switch-when="true">News and Updates</span><!----> <!----> </ng-switch></li><!----></ol></div>
+</div>
+</div>
+<div class="content-pane" style="min-height: 360px;">
+<!----><div data-ng-view=""> <!-- CR - 25955  Changes (2024) ------------------- --> 
+ <style>
+    
+    ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+ 
+p {
+    margin-bottom: 0;
+}
+.news-item--container {
+    padding-top: 1.2rem;
+    position: relative;
+}
+.news-item--container:last-child .news-item-dtl:last-child {
+    margin-bottom: 0;
+}
+.month-cat {
+    font-weight: 500;
+    line-height: 2.3rem;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font: normal normal bold 16px/19px Helvetica;
+}
+.news-item-dtl {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    border: 1px solid #8A9BB8;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+}
+ 
+.news-item-dtl-wrapper {
+    padding: 2rem 1.3rem 6.8rem 1.6rem;
+    box-shadow: none;
+    transition: box-shadow .3s ease-out;
+}
+ 
+.news-item-dtl-wrapper:hover * {
+    cursor: pointer;
+}
+ 
+.news-item-dtl-wrapper:hover .news-item--brieftext {
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+}
+ 
+.news-item-dtl-wrapper:hover a {
+    color: #23527c;
+}
+ 
+.news-item-dtl-wrapper:hover .tag-btn {
+    color: #EAEAEA;
+    background-color: #A0A0A0;
+}
+ 
+.news-item-dtl-wrapper:hover {
+    box-shadow: 0px 5px 9px #00000029;
+}
+.news-item--header {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin: 0;
+    margin-bottom: 1.6rem;
+}
+.news-item--brieftext {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: #5A5A5A;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    transition: font-size .3s ease-out, line-height .3s ease-out;
+    margin-bottom: -1.4rem;
+}
+.news-item--hyperlink-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+ 
+.news-item--hyperlink-wrapper>a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+.news-item--tags {
+    position: absolute;
+    right: 1.6rem;
+    bottom: 1rem;
+}
+    .news-item--date {
+        position: absolute;
+        left: 2rem;
+        bottom: 1.6rem;
+        /* font-size: 1rem; */
+        color: #5a5a5a;
+        /*line-height: 1.9rem; */
+        font: normal normal bold 1.4rem Helvetica;
+    }
+.tag-btn {
+    all: unset;
+    background-color: #EAEAEA;
+    border-radius: 20px;
+    padding: .8rem 1.6rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    line-height: 1.6rem;
+    transition: color .3s ease-out, background-color .3s ease-out;
+}
+    .news-container {
+    margin-left: 6.2rem;
+    margin-right: 6.2rem;
+}
+    .news-content {
+    margin-top: 3.4rem;
+}
+ 
+.news-content ul {
+    list-style: none;
+}
+    .updateheading {
+    padding-top: 1rem;
+    text-align: left;
+    margin-top: 2rem;
+    font: normal normal bold 2.8rem Helvetica;
+    letter-spacing: 0px;
+    color: #2D2D2D;
+    opacity: 1;
+}
+    .archives {
+    margin-left: 1rem;
+    color: #14315D;
+    width: .4rem;
+    height: .8rem;
+    transform: matrix(1, 0.03, -0.03, 1, 0, 0);
+}
+ 
+.archives:active {
+    border: 2px solid #14315D;
+}
+ 
+.archives:hover {
+    cursor: pointer;
+}
+.news-container .news-head p span {
+    position: absolute;
+    right: 130px;
+    font-size: 1.2em;
+    margin-top: -1px;
+}
+    .news-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1.0rem;
+}
+    .news-head>p {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    /* visibility: hidden; */
+}
+    .news-head select {
+    height: 3.4rem;
+    width: 50%;
+    border-radius: .4rem;
+    border: 1px solid #cccccc;
+}
+    .hrline {
+    border: .5px solid #707070;
+    width: 100%;
+    opacity: 0.4;
+}
+    .input-fields {
+    /* display: grid;
+    grid-template-columns: 5fr 1fr 2fr; */
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.2rem;
+}
+    .input-group-wrap {
+    flex-grow: 1;
+}
+    .input-group {
+    border: 1px solid #2C4E86;
+    height: 2rem;
+    align-self: flex-end;
+    border-radius: .2rem;
+    min-width: 15rem;
+    max-width: 25rem;
+}
+
+.btn{
+    padding:6px 10px 6px 25px!important;
+}
+
+input#mySearch {
+    outline: none;
+    font: normal normal normal 12.5px Helvetica;
+    letter-spacing: 0px;
+    color: #2D2D2D;
+    opacity: 1;
+}
+
+select:focus {
+    outline:none;
+}
+
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.btn-default1 {
+    color: #2C4E86;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 6px;
+    pointer-events: visible;
+}
+.form-control1 {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+ 
+.input-group>.form-control1,
+.input-group>.input-group-btn,
+.input-group>.input-group-btn>button {
+    border: none;
+}
+ 
+.input-group>.form-control1:focus {
+    border: none;
+}
+    .dark-body-classatr--sel .input-group-btn,
+.dark-body-classatr--sel .input-group-btn>button {
+    background-color: #3d3d3d!important;
+}
+    .sort-dropdwn,
+.filtermonth-dropdwn {
+    justify-self: end;
+}
+ 
+.sort-dropdwn>span,
+.filtermonth-dropdwn>span {
+    font: Helvetica;
+    padding-right: .5rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+}
+ 
+.sort-dropdwn>select,
+.filtermonth-dropdwn>select {
+    /* all: unset; */
+    font: Helvetica;
+    padding: 0.6rem 1.2rem .6rem .8rem;
+    border: 1px solid #2C4E86;
+    border-radius: 4px;
+}
+.footer-container {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+ 
+.footer-container--results {
+    padding-top: 4rem;
+    padding-bottom: 4.8rem;
+}
+.pagination-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.page-nav--bar-holder {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.page-nav--label-bar,
+.page-nav--label {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #2C4E86;
+    background-color: inherit;
+    padding: .8rem 0 .8rem 1.2rem;
+}
+ 
+.page-nav--label-bar a,
+.page-nav--label a {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    border-right: 1px solid #A9CEF380;
+    padding-right: 1.2rem;
+}
+ 
+.page-nav--label-bar a:hover,
+.page-nav--label a:hover {
+    text-decoration: none;
+}
+ 
+.page-nav--label-bar:last-child a {
+    border-right: none;
+}
+ 
+.page-nav--label-bar-active {
+    border-radius: 4px;
+    background-color: #2C4E86;
+    box-shadow: 0px 3px 6px #00000029;
+    color: #fff;
+    margin-left: -.1rem;
+}
+ 
+.page-nav--label-bar-active a {
+    color: #fff;
+    border-right: none;
+    border-left: none;
+}
+ 
+.dark-body-classatr--sel .page-nav--label-bar-active {
+    background-color: #171616!important;
+    color: #ff0!important;
+}
+    .sort-dropdwn option,
+.filtermonth-dropdwn option {
+    color: #2C4E86;
+}
+.pagination
+{
+    
+    float: right;
+}
+
+.pagination ul {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px;
+}
+
+.pagination ul>li {
+	display: inline;
+}
+
+.pagination ul>li>a,.pagination ul>li>span {
+	position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 0.6;
+    text-decoration: none;
+    color: #2C4E86;
+    border-right: 1px solid #A9CEF3;
+}
+
+/* .pagination ul>li:first-child>a,.pagination ul>li:first-child>span {
+	margin-left: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+} */
+
+.pagination ul>li:last-child>a,.pagination ul>li:last-child>span {
+	border-right:none;
+}
+
+.pagination>ul>li>a:hover,.pagination>ul>li>span:hover,.pagination>ul>li>a:focus,.pagination>ul>li>span:focus {
+	color: #23527c;
+	
+}
+
+.pagination ul>.active>a,.pagination ul>.active>span,.pagination ul>.active>a:hover,.pagination ul>.active>span:hover,.pagination ul>.active>a:focus,.pagination ul>.active>span:focus {
+	z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #2C4E86;
+    border-color: #2C4E86;
+    border-radius: 2px;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity:1;
+}
+
+.pagination ul>.disabled>span,.pagination ul>.disabled>span:hover,.pagination ul>.disabled>span:focus,.pagination ul>.disabled>a,.pagination ul>.disabled>a:hover,.pagination ul>.disabled>a:focus {
+	color: #23527c;
+    opacity:0.7;
+}
+
+.pagination-lg>li>a,.pagination-lg>li>span {
+	padding: 10px 16px;
+	font-size: 18px;
+}
+
+.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.pagination-sm>li>a,.pagination-sm>li>span {
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.pager {
+	padding-left: 0;
+	margin: 20px 0;
+	text-align: center;
+	list-style: none;
+}
+
+.pager li {
+	display: inline;
+}
+
+.pager li>a,.pager li>span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 15px;
+}
+
+.pager li>a:hover,.pager li>a:focus {
+	text-decoration: none;
+	background-color: #eee;
+}
+
+.pager .next>a,.pager .next>span {
+	float: right;
+}
+
+.pager .previous>a,.pager .previous>span {
+	float: left;
+}
+
+.pager .disabled>a,.pager .disabled>a:hover,.pager .disabled>a:focus,.pager .disabled>span {
+	color: #777;
+	cursor: not-allowed;
+	background-color: #fff;
+}
+.psearch{
+		color: red;
+        flex-grow: 4;
+        margin-top: 35px;
+        margin-left: -80px;
+        FONT-SIZE: 9PX;
+	 }
+	 @media screen and (min-width:992px) and (max-width:1199px){
+		 .psearch{
+			 margin-left:-47px;
+		 }
+	 }
+	 @media screen and (min-width:769px) and (max-width:992px){
+		 .psearch{
+			 margin-left:-47px;
+		 }
+	 }
+	 @media (max-width: 768px) {
+		 .psearch {
+    color: red;
+    flex-grow: 4;
+    margin-top: -19px;
+    margin-left: 200%;
+    FONT-SIZE: 9PX;
+}
+	 }
+    @media (max-width: 768px) {
+    .news-container {
+        margin-left: 3.2rem;
+        margin-right: 3.2rem;
+    }
+    .input-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .input-group-wrap {
+        grid-column: span 2;
+    }
+    .input-group {
+        max-width: 100%;
+    }
+    .sort-dropdwn {
+        grid-column-start: 1;
+    }
+    .sort-dropdwn,
+    .filtermonth-dropdwn {
+        justify-self: start;
+        width: 100%;
+    }
+    .sort-dropdwn>select,
+    .filtermonth-dropdwn>select {
+        width: 100%;
+    }
+}
+
+@media screen  and (max-width:767px){
+    .news-head {
+        margin-bottom: -0.3rem;
+    }
+    .updateheading {
+        font: normal normal bold 1.8rem Helvetica;
+    }
+    .news-head>p {
+        font-size: 1.5rem;
+        line-height: 4.3rem;
+        /* visibility: hidden; */
+    }
+    
+    .sort-dropdwn>span, .filtermonth-dropdwn>span {
+        font: Helvetica;
+        padding-right: .5rem;
+        font-size: 1.4rem;
+        line-height: 2.9rem;
+    }
+}
+    @media (max-width: 500px) {
+    .news-container {
+        margin-left: 2.2rem;
+        margin-right: 2.2rem;
+    }
+    .footer-container {
+        display: block;
+    }
+    .footer-container--results {
+        padding-bottom: 0;
+    }
+}
+</style>
+
+<div data-ng-init="getAlladvisories()">
+    <div id="updates-id" class="news-head">
+        <h4 class="updateheading"> News and Updates </h4>
+        <p><a class="archives" data-ng-click="callArchive()"> View Archives <span>›</span></a></p>
+    </div>         
+    <hr class="hrline">
+    <div class="input-fields">
+        <div class="input-group-wrap">
+            <div class="input-group">
+                <input type="text" ng-model="searchQuery" class="form-control1 ng-pristine ng-untouched ng-valid ng-empty" id="mySearch" ng-keyup="getdata1(searchQuery)" placeholder="Search for News and Updates">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default1" id="searchbtn" data-ng-click="searchAdvisory(searchQuery)">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+            </div>
+        </div>
+        <span class="psearch">BETA</span>
+        <div class="sort-dropdwn">
+            <span>Filter by Type</span>
+                <select ng-init="mod = 'Select'" ng-model="mod" id="moduleValue" ng-change="modFilfunction(mod,'tags','html')" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    
+                    <option [value]="select" class="dropcolor" selected="" value="Select">Select</option>
+                    <!----><option ng-repeat="mod in advisory1" class="dropcolor" value="Registration">Registration</option><!----><option ng-repeat="mod in advisory1" class="dropcolor" value="Returns">Returns</option><!----><option ng-repeat="mod in advisory1" class="dropcolor" value="Refunds">Refunds</option><!----><option ng-repeat="mod in advisory1" class="dropcolor" value="Payments">Payments</option><!----><option ng-repeat="mod in advisory1" class="dropcolor" value="e-Invoice">e-Invoice</option><!----><option ng-repeat="mod in advisory1" class="dropcolor" value="Others">Others</option><!---->
+                    <!--<option class="dropcolor" value="News And Updates">News And Updates</option>
+                    <option class="dropcolor" value="Advisories">Advisories</option>
+                    <option class="dropcolor" value="PressReleases">PressReleases</option>-->
+                </select>
+        </div>
+        <div class="filtermonth-dropdwn">
+            <span>Filter by Month</span>
+                <select ng-init="mon = 'Select'" ng-model="mon" class="form-select dropdwn-color ng-pristine ng-untouched ng-valid ng-not-empty" id="monthValue" ng-change="modFilfunction(mon,'mon','html')">
+                    <option [value]="Select" class="dropcolor" selected="" value="Select">Select</option>  
+                    <!--<option class="dropcolor" value="January">January</option>
+                    <option class="dropcolor" value="February">February</option>-->
+                    <!----><option ng-repeat="mon in months" class="dropcolor" value="January">January</option><!----><option ng-repeat="mon in months" class="dropcolor" value="February">February</option><!----><option ng-repeat="mon in months" class="dropcolor" value="March">March</option><!----><option ng-repeat="mon in months" class="dropcolor" value="April">April</option><!----><option ng-repeat="mon in months" class="dropcolor" value="May">May</option><!----><option ng-repeat="mon in months" class="dropcolor" value="June">June</option><!----><option ng-repeat="mon in months" class="dropcolor" value="July">July</option><!----><option ng-repeat="mon in months" class="dropcolor" value="August">August</option><!----><option ng-repeat="mon in months" class="dropcolor" value="September">September</option><!----><option ng-repeat="mon in months" class="dropcolor" value="October">October</option><!----><option ng-repeat="mon in months" class="dropcolor" value="November">November</option><!----><option ng-repeat="mon in months" class="dropcolor" value="December">December</option><!---->
+                </select>
+        </div>
+    </div>
+    <div class="news-content">
+        <!----><ul data-ng-if="data.length&gt;0" id="nws-contnr" class="news-content--container">
+            <!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!----><p class="month-cat" data-ng-if="!dtls.showMonth"> June 2025 </p><!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Subject: Filing of SPL-01/ SPL-02 where payment made through GSTR 3B and other cases">
+                                Subject: Filing of SPL-01/ SPL-02 where payment made through GSTR 3B and other cases
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ 
+1. While filing amnesty applications in Form SPL-01 or SPL-02 under Section 128A of the CGST Act, 2017, some taxpayers are facing technical issues related to auto population of payment details in Table 4 of the forms.
+
+2. In particular, it has been observed that in certain instances, the payments details may not be accurately auto-populated in the applications filed by the taxpayers:
+(a)  Amount paid through "payment towards demand order" functionality
+(b)  Pre-deposit amount details
+(c)  Payment made through GSTR 3B
+
+3. In the above cases, taxpayers are advised to proceed with filing of waiver application as GST portal doesn't stop the taxpayers from filing the application in case wherever the payment details and demand amount are not matching.
+
+4. In all such cases, it is advised to upload the relevant payment information as attachments along with the online application for the verification by the jurisdictional officer
+
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Others</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">Jun 12th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Subject : Advisory on filing of Amnesty applications under Section 128A of the CGST Act">
+                                Subject : Advisory on filing of Amnesty applications under Section 128A of the CGST Act
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+1. As on 08.06.2025, a total of 3,02,658 waiver applications have been filed through SPL-01/02. However, it has come to notice that certain taxpayers are facing difficulties in filing amnesty applications under Section 128A on the GST portal. In view of the approaching last date for submission, various trade bodies have submitted representations requesting an alternate mechanism to facilitate filing. 
+ 
+2. In view of the above, taxpayers who are facing technical issue which is restricting them to file waiver application are advised to adopt the steps outlined in the below link:
+ 
+https://tutorial.gst.gov.in/downloads/news/link_data.pdf
+ 
+3. Difficult if any, faced by the taxpayers in filing applications through this route may immediately be brought into the notice of GSTN by raising a complaint on GST Self-service portal : (https://selfservice.gstsystem.in)
+ 
+Thanks, 
+
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Others</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">Jun 11th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="System Validation for Filing of Refund Applications on GST Portal for QRMP Taxpayers">
+                                System Validation for Filing of Refund Applications on GST Portal for QRMP Taxpayers
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ 
+1.In the month of May 2025, a system-level validation was deployed on the GST Portal to ensure adherence to the provisions outlined in Para 6 of Circular No. 125/44/2019-GST dated 18.11.2019. As per the said circular: 
+
+
+“Any refund claim for a tax period may be filed only after furnishing all the returns in FORM GSTR-1 and FORM GSTR-3B which were due to be furnished on or before the date on which the refund application is being filed. However, in case of a claim for refund filed by a composition taxpayer, a non-resident taxable person, or an Input Service Distributor (ISD), furnishing of returns in FORM GSTR-1 and FORM GSTR-3B is not required. Instead, the applicant should have furnished returns in FORM GSTR-4 (along with FORM GST CMP-08), FORM GSTR-5 or FORM GSTR-6, as the case may be, which were due to be furnished on or before the date on which the refund application is being filed.”
+
+
+2.Accordingly, the GST system was updated to allow refund applications only if the taxpayer had filed all relevant returns that were due up to the date of filing the refund application. 
+
+3.Post implementation of the above validation, it was observed that taxpayers registered under the Quarterly Return Monthly Payment (QRMP) scheme encountered issues while attempting to file refund applications. Specifically, the system was not recognizing invoices furnished using the Invoice Furnishing Facility (IFF) for the first two months of the quarter (M1 and M2), resulting in the inability to proceed with refund filing. Additionally, in cases where GSTR-1 for the previous quarter had already been filed, the system was erroneously prompting taxpayers to file returns for M1 and M2 of the current quarter too. Taxpayers were facing this issue when the refund application was being submitted during the period between the two quarters. 
+
+4.This is to inform the taxpayers that the aforementioned technical issue has now been resolved. Taxpayers under the QRMP scheme can now file refund applications for the invoices for which GSTR-3B has been already filed. Please note invoices furnished through IFF for which GSTR-3B is yet to be filed in coming return period should not be included in the refund application.
+
+5.All taxpayers are advised to ensure that relevant returns are filed prior to filing a refund application, as per the legal provisions and existing system validations. 
+
+6.In case of any discrepancies or system-related queries, taxpayers may reach out to the GST Helpdesk (https://selfservice.gstsystem.in) 
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Refund</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">Jun 10th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Barring of GST Return on expiry of three years">
+                                Barring of GST Return on expiry of three years
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ 
+As per the Finance Act,2023 (8 of 2023), dt. 31-03-2023, implemented w.e.f 01-10-2023 vide Notification No. 28/2023 – Central Tax dated 31th July, 2023, the taxpayers shall not be allowed file their GST returns after the expiry of a period of three years from the due date of furnishing the said return under Section 37 ( Outward Supply), Section 39 (payment of liability), Section 44 ( Annual Return) and Section 52 (Tax Collected at Source). These Sections cover GSTR-1, GSTR 3B, GSTR-4, GSTR-5, GSTR-5A, GSTR-6, GSTR 7, GSTR 8 and GSTR 9. 
+
+
+Hence, above mentioned returns will be barred for filing after expiry of three years. The said restriction will be implemented on the GST portal from July 2025 Tax period. Hence, the taxpayers are once again advised to reconcile their records and file their GST Returns as soon as possible if not filed till now.
+
+Earlier also an  advisory dated October 29th, 2024  , was issued by GSTN on this issue. 
+
+Thanking You, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Returns</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">Jun 7th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Advisory regarding non-editable of auto-populated liability in GSTR-3B">
+                                Advisory regarding non-editable of auto-populated liability in GSTR-3B
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ 
+
+1.GST Portal provides a pre-filled GSTR-3B, where the tax liability gets auto-populated based on the outward supplies declared in GSTR-1/ GSTR-1A/ IFF. As of now taxpayers can edit  such auto populated values in form GSTR 3B itself. 
+
+2.With introduction of form GSTR 1A, taxpayer now has a facility to amend their incorrectly declared outward supplies in GSTR-1/IFF through GSTR-1A, allowing them an opportunity to correct their liabilities before filing their GSTR-3B in the same return period.
+
+3.In view of the same, from July,2025 tax period for which form GSTR 3B will be furnished in August,2025 such auto populated liability will become non editable. Thus, taxpayers will be allowed to amend their auto populated liability by making amendments through form GSTR 1A which can be filed for the same tax period before filing of GSTR 3B.
+
+4.For more details,kindly refer to the   advisory dated January 27, 2025  and  advisory dated October 17, 2024  , issued by GSTN on this issue. 
+
+Thanking You, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Returns</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">Jun 7th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Gross and Net GST revenue collections for the month of May, 2025">
+                                Gross and Net GST revenue collections for the month of May, 2025
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">Please click on the link below to view the gross and net GST revenue collections for the month of May, 2025.
+https://tutorial.gst.gov.in/downloads/news/approved_monthly_gst_data_for_publishing_may_2025.pdf
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Others</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">Jun 1st, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!----><p class="month-cat" data-ng-if="!dtls.showMonth"> May 2025 </p><!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Attention - Advisory on reporting values in Table 3.2 of GSTR-3B">
+                                Attention - Advisory on reporting values in Table 3.2 of GSTR-3B
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ This is to inform taxpayers of the following developments concerning Table 3.2 of Form GSTR-3B:
+
+1.As per the earlier advisory dated April 11, 2025, it was communicated that the auto-populated values in Table 3.2 of Form GSTR-3B would be made non-editable starting from the April 2025 tax period (i.e., for the return to be filed in May 2025).
+
+2.However, GSTN has received several representations and grievances from taxpayers regarding this change. These concerns are currently being examined and will be suitably addressed in due course.
+
+3.In the interest of taxpayer convenience and to facilitate smooth filing, it has been decided that Table 3.2 shall remain editable for the time being. Taxpayers are advised to report or amend the auto populated entries, if required and furnish their returns accurately, ensuring the correctness of the disclosed information.
+
+
+4.Taxpayers will be duly informed through a separate communication once the proposed changes are implemented on the GST Portal.
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Returns</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">May 16th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Advisory on Appeal withdrawal with respect to Waiver scheme">
+                                Advisory on Appeal withdrawal with respect to Waiver scheme
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ In the GST system, when Withdrawal application (APL 01W) for appeal is filed before issuance of final acknowledgment (APL 02) by the Appellate authority, then the system automatically withdraws the Appeal application (APL 01). In such cases, the status of the appeal application will automatically change from “Appeal submitted” to “Appeal withdrawn”.
+
+However, if withdrawal application is filed after issuance of final acknowledgment, then the withdrawal of such appeal is subjected to the approval of the Appellate authority. Once the Appellate authority approves the withdrawal application, the status of the Appeal application changes from “Appeal submitted” to “Appeal withdrawn”.
+
+Waiver scheme under Section 128A mandates that any appeal against the requisite demand order should not remain pending with Appellate authority. In both the above-mentioned cases, the status of the Appeal application is changed to “Appeal Withdrawn” which essentially fulfilled the requirement.
+
+
+While filing waiver application or in the already filed waiver application, taxpayers need to upload the screenshot of the appeal case folder showing status as “Appeal withdrawn”.
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Others</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">May 14th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Updates in Refund Filing Process for Recipients of Deemed Export">
+                                Updates in Refund Filing Process for Recipients of Deemed Export
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+ GSTN has made the following changes in the refund filing process under the category "On account of Refund by Recipient of deemed export":
+
+1.Refund applications under this category is no longer need to be filed in chronological order of Tax Period which means Taxpayers are not required to select "From Period" and "To Period" while filing refund application.
+
+2.Taxpayers must ensure that all the returns (GSTR-1, GSTR-3B etc) due till the date of refund application, are filed. 
+
+
+3.Under the afore said category, the table “Amount Eligible for Refund” has been modified. The columns of the revised table are explained hereunder: 
+
+a.  Col. 1 ‘Balance in ECL at the time of filing of refund application’. This column will reflect the balance available under various Head in Electronic Credit Ledger at the time of filing of application. It will be auto populated.
+b.  Col. 2 ‘Net Input Tax Credit (ITC) of Deemed Exports (as per uploaded invoices)’, in this column the amount of claimed ITC, under respective major Heads will be auto populated based on invoices furnished in Statement 5B.
+c.  Col. 3 ‘Refund amount as per the uploaded invoices’ reflects the sum of the amount of ITC claimed under all major Heads (IGST/CGST/SGST/UT) as per the invoices uploaded by the taxpayer in Statement 5B and shall be downward editable.
+d.  Col. 4 ‘Eligible Refund Amount’. In this column, maximum amount of ITC which is available for refund claim will be auto populated. It will be auto-calculated based on the order of debit specified in Circular No. 125/44/2019-GST dated 18.11.2019.
+e.  Col. 5 “Refund amount not eligible as insufficient balance in the ECL (5)”. This column reflects the difference between the total amount of claimed ITC and the total amount of ITC available in Electronic credit Ledger under various major Heads. 
+
+4.  Functionality has been improved to maximize the amount of refund a taxpayer can claim in terms of uploaded invoices, irrespective of the fact that sufficient balance is available in the respective Head of electronic credit ledger or not. Here, the total amount of claim under various Heads (IGST, CGST,SGST) will be compared with total amount of ITC available under various Heads in electronic credit ledger.
+
+5.  The taxpayers are advised to note these changes and if any problem is faced while filing of refund application, grievance may be raised in GST portal. https://selfservice.gstsystem.in/ReportIssue.aspx
+
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Refunds</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">May 8th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!----><li class="news-item--container" ng-repeat="dtls in data">
+                <!---->
+                <ul id="nws-items" class="news-item-dtls">
+                    <li class="news-item-dtl">
+                        <div class="news-item-dtl-wrapper" data-ng-click="redirectNU(dtls,'advisory/advisoryandreleases')" data-popup="dataPopup">
+                            <h3 class="news-item--header" style="text-align: justify;font: normal normal bold 20px/24px Helvetica;letter-spacing: 0px;color: #2D2D2D;opacity: 1;" title="Updates in Refund Filing Process for various refund categories-Reg">
+                                Updates in Refund Filing Process for various refund categories-Reg
+                            </h3>
+                            <!---->
+							 <!----><p data-ng-if="dtls.content" class="news-item--brieftext"><span style="font: normal normal normal 1.6rem Helvetica;text-align:justify;">
+
+1.  GSTN has been made important changes in the refund filing process under the following categories:
+
+(a)  Export of Services with payment of tax
+(b)  Supplies made to SEZ Unit/SEZ Developer with payment of tax
+(c)  On account of Refund by Supplier of Deemed export
+
+2.  	For the above refund categories, the requirement to select a specific tax period (‘From’ and ‘To’) while filing refund applications has been removed. The taxpayers can now directly proceed with selecting the refund category as above and clicking on “Create Refund Application.”
+
+
+3.	Taxpayers must ensure that all the returns (GSTR-1, GSTR-3B etc) due till the date of refund application, are filed. 
+
+4.  The said refund categories are changed from ‘Tax Period based filing’ to ‘Invoice based filing’. The taxpayers can upload eligible invoices and claim refund in the following statements:
+
+(a)  Export of Services with payment of Tax (Statement 2)
+(b)  SEZ Supplies with payment of Tax (Statement 4)
+(c)  In case of Deemed Exports, the application by Supplier (Statement 5B)
+
+  The invoices once uploaded with a refund application will be locked for any further amendment and will not be available for any subsequent refund claims. The said invoices will be unlocked only if the refund application is withdrawn or a deficiency memo is issued.
+
+
+Thanks, 
+Team GSTN</span></p><!---->
+                             <!--<div class="news-item--hyperlink-wrapper">
+                                <a data-popup="true" data-ng-if="dtls.IsExternal == 'Y'" target="_blank" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && dtls.linkURl" data-ng-href="{{dtls.linkURl}}">Read more...</a>
+                                <a data-ng-if="dtls.IsExternal != 'Y' && !dtls.linkURl" data-ng-href="{{servers.GST_SERVICES_R1_URL}}/services/advisoryandreleases/read/{{dtls.id}}">Read more...</a>
+                            </div>-->
+                            <ul class="news-item--tags">
+                                <li>
+                                    <button class="tag-btn">Refund</button>
+                                </li>
+                            </ul>
+                            <p class="news-item--date">May 8th, 2025</p>
+                        </div>
+                    </li>
+                </ul>
+            </li><!---->
+        
+        </ul><!---->
+    </div>
+    <p data-ng-show="!showpagination" class="ng-hide"></p>
+        <div data-ng-show="showpagination" class="footer-container">
+            <p class="footer-container--results">Showing 10 of 40</p>
+                <div class="pagination-container">
+                    <div class="page-nav--bar-holder">
+                        <div class="pagination" data-pagination="" data-num-pages="numPages()" data-current-page="currentPage" data-max-size="maxSize" data-boundary-links="true"><ul>
+  <!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}" class="disabled"><a ng-click="selectPage(page.number)">First</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}" class="disabled"><a ng-click="selectPage(page.number)">Previous</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}" class="active"><a ng-click="selectPage(page.number)">1</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)">2</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)">3</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)">4</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)">Next</a></li><!----><li ng-repeat="page in pages" ng-class="{active: page.active, disabled: page.disabled}"><a ng-click="selectPage(page.number)">Last</a></li><!---->
+  </ul>
+</div>
+                    </div> 
+                </div>   
+        </div>
+</div>
+
+<!-- CR - 25955  Changes (2024) END------------------- -->
+ 
+ <!-- <style >
+         @media (max-width: 900px){
+       .adv{
+        width: 100%;
+        *width: 100%;
+      }
+    }
+
+
+
+
+
+        @media (min-width: 1200px) {
+       .adv{
+        width:20%;
+        *width:20%;
+      }
+    }
+        </style> -->
+     
+            <!-- <div class="tabpane" data-ng-init="getAlladvisories()">
+                    <div class="row">
+
+                <div class="col-lg-2 cards adv" >
+                            <div class="card-header" style="height:40px;padding: 4px 12px 4px 4px; color: #fff;
+                            background-color: #1A74C2 ;
+                            transition: box-shadow .25s;
+                            border-radius: 2px ;text-align: center;margin-top: 7px">
+
+                                <h5>Registration</h5>
+                            </div>
+                            <div class="card-body" style="height:650px;padding: 4px 12px 4px 4px; color:black;
+                            background-color:  #d3d3d3;
+                            transition: box-shadow .25s;
+                            border-radius: 2px;margin-top: 5px">
+
+                            <h6 style="text-align: center">
+                                <div ng-if="registration">
+                                <ol >
+                                <li data-ng-repeat="reg in registration"><div style="margin-top: 7px;text-align: left"><a data-popup="true" data-ng-if="reg.IsExternal == 'Y'" target="_blank" data-ng-href="{{reg.linkURl}}" title="{{reg.title}}" data-ng-bind="reg.title"></a>
+														<a data-ng-if="reg.IsExternal != 'Y' && reg.linkURl" data-ng-href="{{reg.linkURl}}" title="{{reg.title}}" data-ng-bind="reg.title"></a>
+														<a data-ng-if="reg.IsExternal != 'Y' && !reg.linkURl" data-ng-click="read(reg.id)"
+														 title="{{reg.title}}" data-ng-bind="reg.title"></a> </div>
+									<div style="margin-top: 3px">({{reg.date}})</div></li>
+                                </ol>
+                                </div>
+                                <div ng-if="!registration">
+                                    No Advisories
+                                </div>
+                            </h6>
+                           <div style="background-color:white;position: absolute; bottom:40px;left:110px;width:60px;color:#337AB7;background-color:white;text-align:center">
+    						<a data-ng-click="goToNext('Reg', 'A')" ng-if="registration" >More...</a>
+								</div>
+                            </div>
+                    </div>
+
+
+                    <div class="col-lg-2 cards adv" >
+                            <div class="card-header" style="height:40px;padding: 4px 12px 4px 4px; color: #fff;
+                            background-color: #1A74C2 ;
+                            transition: box-shadow .25s;
+                            border-radius: 2px;text-align: center;margin-top: 7px">
+
+                              <h5>Refunds/Payments</h5>
+                            </div>
+
+
+
+    <div class="card-body" style="height:650px;padding: 4px 12px 4px 4px; color:black;
+    background-color: #d3d3d3;
+    transition: box-shadow .25s;
+    border-radius: 2px; margin-top: 5px">
+
+    <h6 style="text-align: center">
+                                <div ng-if="refpay">
+                                <ol >
+                                <li data-ng-repeat="refundpay in refpay"><div style="margin-top: 7px;text-align: left"><a data-popup="true" data-ng-if="refundpay.IsExternal == 'Y'" target="_blank" data-ng-href="{{refundpay.linkURl}}" title="{{refundpay.title}}" data-ng-bind="refundpay.title"></a>
+														<a data-ng-if="refundpay.IsExternal != 'Y' && refundpay.linkURl" data-ng-href="{{refundpay.linkURl}}" title="{{refundpay.title}}" data-ng-bind="refundpay.title"></a>
+														<a data-ng-if="refundpay.IsExternal != 'Y' && !refundpay.linkURl" data-ng-click="read(refundpay.id)"
+														 title="{{refundpay.title}}" data-ng-bind="refundpay.title"></a></div>
+									<div style="margin-top: 3px">({{refundpay.date}})</div></li>
+                                </ol>
+                                </div>
+                                <div ng-if="!refpay">
+                                    No Advisories
+                                </div>
+                            </h6>
+  <div style="background-color:white;position: absolute; bottom:40px;left:110px;width:60px;color:#337AB7;background-color:white;text-align:center">
+    						<a data-ng-click="goToNext('RefPay', 'A')"ng-if="refpay" >More...</a>
+								</div>
+    </div>
+    </div>
+                    <div class="col-lg-2 cards adv" >
+                            <div class="card-header" style="height:40px;padding: 4px 12px 4px 4px; color: #fff;
+                            background-color: #1A74C2 ;
+                            transition: box-shadow .25s;
+                            border-radius: 2px;text-align: center;margin-top: 7px">
+
+                                <h5>Returns</h5>
+                            </div>
+
+
+
+    <div class="card-body" style="height:650px;padding: 4px 12px 4px 4px; color:black;
+    background-color:  #d3d3d3;
+    transition: box-shadow .25s;
+    border-radius: 2px; margin-top: 5px">
+
+        <h6 style="text-align: center">
+                                <div ng-if="returns">
+                                <ol >
+                                <li data-ng-repeat="ret in returns"><div style="margin-top: 7px;text-align: left"><a data-popup="true" data-ng-if="ret.IsExternal == 'Y'" target="_blank" data-ng-href="{{ret.linkURl}}" title="{{ret.title}}" data-ng-bind="ret.title"></a>
+														<a data-ng-if="ret.IsExternal != 'Y' && ret.linkURl" data-ng-href="{{ret.linkURl}}" title="{{ret.title}}" data-ng-bind="ret.title"></a>
+														<a data-ng-if="ret.IsExternal != 'Y' && !ret.linkURl" data-ng-click="read(ret.id)"
+														 title="{{ret.title}}" data-ng-bind="ret.title"></a></div>
+									<div style="margin-top: 3px">({{ret.date}})</div></li>
+                                </ol>
+                                </div>
+                                <div ng-if="!returns">
+                                    No Advisories
+                                </div>
+                            </h6>
+  <div style="background-color:white;position: absolute; bottom:40px;left:110px;width:60px;color:#337AB7;background-color:white;text-align:center">
+    						<a data-ng-click="goToNext('Ret', 'A')" ng-if="returns">More...</a>
+								</div>
+    </div>
+    </div>
+                    <div class=" col-lg-2 cards adv" >
+                            <div class="card-header" style="height:40px;padding: 4px 12px 4px 4px; color: #fff;
+                            background-color: #1A74C2 ;
+                            transition: box-shadow .25s;
+                            border-radius: 2px ; text-align: center;margin-top: 7px">
+
+                           <h5>E-Way Bill</h5>
+                            </div>
+
+
+
+    <div class="card-body" style="height:650px;padding: 4px 12px 4px 4px; color:black;
+    background-color:  #d3d3d3;
+    transition: box-shadow .25s;
+    border-radius: 2px; margin-top: 5px">
+
+    
+    <h6 style="text-align: center">
+                                <div ng-if="eway">
+                                <ol >
+                                <li data-ng-repeat="ewa in eway"><div style="margin-top: 7px;text-align: left"><a data-popup="true" data-ng-if="ewa.IsExternal == 'Y'" target="_blank" data-ng-href="{{ewa.linkURl}}" title="{{ewa.title}}" data-ng-bind="ewa.title"></a>
+														<a data-ng-if="ewa.IsExternal != 'Y' && ewa.linkURl" data-ng-href="{{ewa.linkURl}}" title="{{ewa.title}}" data-ng-bind="ewa.title"></a>
+														<a data-ng-if="ewa.IsExternal != 'Y' && !ewa.linkURl" data-ng-click="read(ewa.id)"
+														 title="{{ewa.title}}" data-ng-bind="ewa.title"></a></div>
+									<div style="margin-top: 3px">({{ewa.date}})</div></li>
+                                </ol>
+                                </div>
+                                <div ng-if="!eway">
+                                    No Advisories
+                                </div>
+                            </h6>
+    <div style="background-color:white;position: absolute; bottom:40px;left:110px;width:60px;color:#337AB7;background-color:white;text-align:center">
+    						<a data-ng-click="goToNext('Eway', 'A')" ng-if="eway" >More...</a>
+								</div>
+    
+    </div>
+    </div>
+                    <div class="col-lg-2 cards adv" >
+                            <div class="card-header" style="height:40px;padding: 4px 12px 4px 4px; color: #fff;
+                            background-color: #1A74C2 ;
+                            text-align: center;
+                            border-radius: 2px;margin-top: 7px">
+
+                             <h5>Others</h5>
+                            </div>
+
+
+
+    <div class="card-body" style="height:650px;padding: 4px 12px 4px 4px; color:black;
+    background-color:  #d3d3d3;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s;
+    border-radius: 2px; margin-top: 5px">
+
+    <h6 style="text-align: center">
+                                <div ng-if="others">
+                                <ol>
+                                <li  data-ng-repeat="oth in others"><div style="margin-top: 7px;text-align: left"><a data-popup="true" data-ng-if="oth.IsExternal == 'Y'" target="_blank" data-ng-href="{{oth.linkURl}}" title="{{oth.title}}" data-ng-bind="oth.title"></a>
+														<a data-ng-if="oth.IsExternal != 'Y' && oth.linkURl" data-ng-href="{{oth.linkURl}}" title="{{oth.title}}" data-ng-bind="oth.title"></a>
+														<a data-ng-if="oth.IsExternal != 'Y' && !oth.linkURl" data-ng-click="read(oth.id)"
+														 title="{{oth.title}}" data-ng-bind="oth.title"></a></div>
+									<div style="margin-top: 3px">({{oth.date}})</div></li>
+                                </ol>
+                                </div>
+                                <div ng-if="!others">
+                                    No Advisories
+                                </div>
+                            </h6>
+<div style="background-color:white;position: absolute; bottom:40px;left:110px;width:60px;color:#337AB7;background-color:white;text-align:center">
+    						<a data-ng-click="goToNext('Oth', 'A')" ng-if="others" >More...</a>
+								 </div>
+    
+    <div style="background-color:white; position: absolute; bottom:10px;left:110px;width:80px;color:#337AB7;text-align:center">
+    						<a data-ng-click="goToNext('All', 'A')" >View all <i class="fa fa-angle-right" aria-hidden="true"></i>
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+     </a></div>
+  
+    </div>
+
+
+
+
+
+
+     </div>
+
+				</div>
+
+    </div> -->
+            </div>
+</div>
+</div>
+</div>
+</div>
+<footer class="" ng-controller="footerCtrl">
+<div class="expbtn">
+<i ng-click="fexpand()" ng-class="{'fa-angle-up': expanded, 'fa-angle-down': !expanded}" class="fa fa-angle-down" title="Expand/Collapse Footer"></i>
+</div>
+<div class="ifooter " id="demo">
+<!----><ng-include src="'/pages/common/footer.html'"><div class="f1 menuList" data-ng-show="!expanded &amp;&amp; !hidemenu" id="siteDis" data-toggle="tooltip" data-placement="top" data-ng-class="{'disabled' :udata.disableMenu}">
+	<div class="container">
+		<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-mobile">
+				<a class="fhead" ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/about/gst/history" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/about/gst/history" rel="noopener noreferrer">About GST</a>
+				<ul>
+				    <!--<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="{{servers.GST_CONTENT_R1_URL}}/about/vision">Vision and Mission</a></li>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="{{servers.GST_CONTENT_R1_URL}}/about/citizencharter">Citizen Charter</a></li>-->
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/about/gst/council" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/about/gst/council" rel="noopener noreferrer">GST Council Structure</a></li>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/about/gst/history" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/about/gst/history" rel="noopener noreferrer">GST History</a></li>
+				</ul>				
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-mobile">
+				<a class="fhead" ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/policies/website" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/policies/website" rel="noopener noreferrer">Website Policies</a>
+				<ul>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/policies/website" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/policies/website" rel="noopener noreferrer">Website Policy</a></li>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/policies/termsandconditions" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/policies/termsandconditions" rel="noopener noreferrer">Terms and Conditions</a></li>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/policies/hyperlink" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/policies/hyperlink" rel="noopener noreferrer">Hyperlink Policy</a></li>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/policies/disclaimer" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/policies/disclaimer" rel="noopener noreferrer">Disclaimer</a></li>
+				</ul>
+				
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 no-mobile">
+				<a class="fhead" ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/help/relatedsites" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/help/relatedsites" rel="noopener noreferrer">Related Sites</a>
+				<ul>
+					<li><a data-popup="true" data-ng-href="http://www.cbic.gov.in/" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="http://www.cbic.gov.in/">Central Board 
+					of Indirect Taxes and Customs <i class="fa fa-external-link-square"></i></a></li>
+					<li><a ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/help/statevat" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/help/statevat" rel="noopener noreferrer">State
+							Tax Websites</a></li>
+					<li><a data-popup="true" data-ng-href="https://www.india.gov.in/" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="https://www.india.gov.in/">National
+							Portal <i class="fa fa-external-link-square"></i></a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12 help no-mobile">
+				<a class="fhead" data-ng-href="//services.gst.gov.in/services/HelpandTaxpayer/HelpandTaxpayerfacilities" target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="//services.gst.gov.in/services/HelpandTaxpayer/HelpandTaxpayerfacilities">Help and Taxpayer Facilities</a>
+				<ul>
+					<li> <a data-ng-href="//www.gst.gov.in/system/" target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="//www.gst.gov.in/system/">System Requirements</a></li>
+					<li> <a data-ng-href="//www.gst.gov.in/help/helpmodules/" target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="//www.gst.gov.in/help/helpmodules/">GST Knowledge Portal</a></li>
+					<li> <a data-popup="true" href="https://www.youtube.com/c/GoodsandServicesTaxNetwork" target="_blank" data-ng-class="{'disabledanchor' :udata.disableMenu}" rel="noopener noreferrer">GST Media <i class="fa fa-external-link-square"></i></a></li>
+						
+								
+					<!---->
+					<!---->
+					<!----><li data-ng-if="!udata"><a data-ng-href="//services.gst.gov.in/services/sitemap" target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="//services.gst.gov.in/services/sitemap">Site Map</a></li><!---->
+					<li><a data-ng-href="//services.gst.gov.in/services/grievanceNodalOfficer" target="_self" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="//services.gst.gov.in/services/grievanceNodalOfficer">Grievance Nodal Officers  </a></li> 
+					<li><a data-popup="true" data-ng-href="https://gstn.org.in/empaneled-companies" target="_blank" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="https://gstn.org.in/empaneled-companies" rel="noopener noreferrer">Free Accounting and Billing Services <i class="fa fa-external-link-square"></i></a></li>
+					<li><a data-popup="true" data-ng-href="https://gstn.org.in/gsp-ecosystem" target="_blank" data-ng-class="{'disabledanchor' :udata.disableMenu}" href="https://gstn.org.in/gsp-ecosystem" rel="noopener noreferrer">GST Suvidha Providers <i class="fa fa-external-link-square"></i></a></li>
+							
+							</ul>
+                 
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cont no-mobile scl">
+				<a class="fhead" ng-attr-target="{{(servers.STATIC_WEB === true) ? undefined : '_blank'}}" data-ng-href="//www.gst.gov.in/contact" data-ng-class="{'disabledanchor' :udata.disableMenu}" target="_blank" href="//www.gst.gov.in/contact" rel="noopener noreferrer">Contact Us</a>
+				<ul>
+					<li>
+						<span class="contact">Help Desk Number: <br>1800-103-4786</span>
+					</li>
+					<!-- <li>
+						<a data-popup="true" data-ng-if="!udata" data-ng-href="//www.entrust.com/ssl-certificates/" target="_blank" data-ng-click="seal()"><img src="{{servers.GST_CONTENT_R1_URL}}\uiassets\images\entrustSeal.png" alt="Loading..." ></a>
+					</li> -->
+					<li>
+						<span class="contact">Log/Track Your Issue:<br></span><a data-popup="true" href="https://selfservice.gstsystem.in/" title="Grievance Redressal Portal for GST" target="_blank" data-ng-class="{'disabledanchor' :udata.disableMenu}" rel="noopener noreferrer">Grievance Redressal Portal for GST <i class="fa fa-external-link-square"></i></a>
+					</li>
+					<li class="social">
+						<a data-popup="true" href="//www.facebook.com/Goods-and-Services-Tax-1674179706229522/?fref=ts" title="Facebook" data-ng-class="{'disabledanchor' :udata.disableMenu}"><span><img data-ng-src="//static.gst.gov.in/uiassets/images/Facebook.svg" src="//static.gst.gov.in/uiassets/images/Facebook.svg"></span></a>
+						<a data-popup="true" href="//www.youtube.com/channel/UCFYpOk92qurlO5t-Z_y-bOQ" title="Youtube" data-ng-class="{'disabledanchor' :udata.disableMenu}"><span><img data-ng-src="//static.gst.gov.in/uiassets/images/Youtube.svg" src="//static.gst.gov.in/uiassets/images/Youtube.svg"></span></a>
+						<a data-popup="true" href="//twitter.com/Infosys_GSTN" title="Twitter" data-ng-class="{'disabledanchor' :udata.disableMenu}"><span><img data-ng-src="//static.gst.gov.in/uiassets/images/X.svg" src="//static.gst.gov.in/uiassets/images/X.svg"></span></a>
+						<a data-popup="true" href="//www.linkedin.com/company/gstn-official/about/?viewAsMember=true" title="Linkedin" data-ng-class="{'disabledanchor' :udata.disableMenu}"><span><img data-ng-src="//static.gst.gov.in/uiassets/images/Linkedin.svg" src="//static.gst.gov.in/uiassets/images/Linkedin.svg"></span></a>
+					</li>
+					 <!---->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="f2">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<p>©&nbsp;2025-26&nbsp;Goods and Services Tax Network</p>
+				<p>Site Last Updated on 03-06-2025</p>
+				<p>Designed &amp; Developed by GSTN</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="f3">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="site">Site best viewed at 1024 x 768 resolution in Microsoft Edge, Google Chrome 49+, Firefox 45+ and Safari 6+</p>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+.disabled{
+	cursor: not-allowed !important;
+	opacity: 0.6;
+}
+.menuList .disabled:active {
+	pointer-events: none;
+}
+.menuList .disabledanchor {
+	cursor: not-allowed;
+	pointer-events: none;
+}
+</style>
+<script>
+	$(document).on('click', '.disabled', function(){
+		return false;
+	});
+</script></ng-include>
+</div>
+</footer>
+<div title="Scroll to Top" class="back-to-top">
+<i class="fa fa-angle-up"></i>
+<p>Top</p>
+</div> <script src="//static.gst.gov.in/uiassets/javascripts/fwk/script.min.js"></script>
+<script src="//static.gst.gov.in/uiassets/javascripts/fwk/uiscriptsupgrd.js"></script>
+<script src="//static.gst.gov.in/uiassets/javascripts/fwk/datepicker.min.1.4.js"></script>
+<script src="//static.gst.gov.in/uiassets/js/common/common1.3.js"></script>
+<script src="//static.gst.gov.in/uiassets/javascripts/fwk/angular-all1.0.js"></script>
+<script src="//static.gst.gov.in/uiassets/javascripts/fwk/ng-table.min.js"></script>
+<script src="//static.gst.gov.in/uiassets/js/fwk/fullcalendar.min.js"></script>
+<script src="//static.gst.gov.in/uiassets/javascripts/fwk/pdfmake.min.1.1.js"></script>
+<script src="//static.gst.gov.in/uiassets/javascripts/fwk/vfs_fonts.1.1.js"></script>
+<script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="//static.gst.gov.in/uiassets/javascripts/fwk/ui.bootstrap.js"></script>
+<script>
+var server_urls = {
+"GST_CONTENT_R1_URL": "//www.gst.gov.in",
+"GST_SERVICES_R1_URL": "//services.gst.gov.in",
+"SERVICES_STATIC_URL" : "//static.gst.gov.in",
+"GST_REGISTRATION_R1_URL": "//reg.gst.gov.in",
+"GST_TUTORIAL_R1_URL": "//tutorial.gst.gov.in",
+"GST_STATIC_R1_URL": "//static.gst.gov.in",
+"GST_PAYMENTS_R1_URL": "//payment.gst.gov.in",
+"GST_STATEMENTS_R1_URL": "//statement.gst.gov.in",
+"GST_RETURNS_R1_URL": "//return.gst.gov.in",
+"GST_REFUNDS_R1_URL" : "//refund.gst.gov.in",
+"REFUNDS_STATIC_URL" : "//refundstatic.gst.gov.in",
+"GST_NEWRET_STATIC_URL": "//dashret.gst.gov.in",
+"NEW_RETURNS_DASHBOARD": "dashboard.gst.gov.in",
+"LAST_UPDATED_DATE": "03-06-2025",
+"NAV_COMPONENT": "advisories",
+"GST_CC_R1_URL" : "//prodcc.gst.gov.in",
+"GST_USRMSTRS_URL" : "//usermaster.gst.gov.in",
+"GST_SRM_R1_URL" : "//srm.gst.gov.in",
+"GST_PUBLICSERVICES_R1_URL" : "//publicservices.gst.gov.in/publicservices",
+"GST_EINVOICE_URL" : "//einvoice.gst.gov.in",
+"ENABLE_EINVOICE_DASHBOARD" : "True",
+"GST_CC_R1_URL" : "//prodcc.gst.gov.in",
+"IMS_LIVE_DT":"102024",
+"IMSDASH_LIVE_DT":"2024-10-15"
+}
+$().setServers(server_urls);
+$().setConstant('IMS_LIVE_DT', "102024");
+$().setConstant('IMSDASH_LIVE_DT', "2024-10-15");
+$script('//static.gst.gov.in/uiassets/js/services/forouter1.8.js', 'forouter', function() {
+$script('//static.gst.gov.in/uiassets/js/common/directives2.0.js', 'directives', function() {
+$script('//static.gst.gov.in/uiassets/js/services/loginCtrl1.3.js', 'loginCtrl', function() {
+$script('//static.gst.gov.in/uiassets/js/services/trackArnpre1.0.js', 'trackArnCtrl', function() {
+$script('//static.gst.gov.in/uiassets/js/services/forgotCtrl1.1.js', 'forgotCtrl', function() {
+$script('//static.gst.gov.in/uiassets/js/services/createuserCtrl1.0.js', 'migratedDealerCtrl', function() {
+$script('//static.gst.gov.in/uiassets/js/services/mysavedappctrl1.2.js', 'loginCtrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/authCtrl1.1.js', 'authctrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/taxPayerDashboardCtrl1.0.js', 'taxPayerDashboardCtrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/contactsctrl1.0.js', 'contactsctrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/searchtpCtrl1.0.js', 'searchtp', function(){
+$script('//static.gst.gov.in/uiassets/js/services/actsrulesctrl1.1.js', 'actsrulesctrl', function() {
+$script('//static.gst.gov.in/uiassets/js/services/holidaylistctrlpre1.1.js', 'holidaylistCtrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/notificationsctrlpre1.1.js', 'notificationsctrlpre', function(){
+$script('//static.gst.gov.in/uiassets/js/services/listoftaxpayerprectrl1.1.js', 'listoftaxpayerprectrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/grievancectrlpre1.1.js', 'grievancectrlpre', function(){
+$script('//static.gst.gov.in/uiassets/js/services/officeaddress1.0.js', 'officeaddress', function(){
+$script('//static.gst.gov.in/uiassets/js/services/feedbackprectrl.js', 'feedbackprectrl', function(){
+$script('//static.gst.gov.in/uiassets/js/services/errorDescription.js', 'errorDescription', function(){
+$script('//static.gst.gov.in/uiassets/javascripts/services/advisories.js', 'advisories', function(){
+$script('//static.gst.gov.in/uiassets/js/services/trackApplicationStatus.js', 'trackApplicationStatus', function(){
+angular.bootstrap(document, ['myApp']);
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+});
+</script>
+
+<div id="ngProgress-container"><div id="ngProgress" style="height: 2px; background-color: firebrick; color: firebrick; width: 100%; opacity: 0;"></div></div></body></html>
