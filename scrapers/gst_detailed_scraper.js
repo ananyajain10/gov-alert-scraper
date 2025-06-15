@@ -11,12 +11,10 @@ const CHAT_IDS = process.env.TELEGRAM_CHAT_IDS
   ? process.env.TELEGRAM_CHAT_IDS.split(',').map(id => id.trim())
   : [];
 
-
 const STORAGE_DIR = path.join(__dirname, '..', 'latest_saved');
 if (!fs.existsSync(STORAGE_DIR)) fs.mkdirSync(STORAGE_DIR);
 
 const delay = () => new Promise(res => setTimeout(res, Math.floor(Math.random() * 2000) + 1000));
-
 
 function escapeMarkdown(text = '') {
   return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, ch => `\\${ch}`);
@@ -27,34 +25,84 @@ const sendToTelegram = async ({ title, date, tags, summary, url }) => {
 
   const apiUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
   for (const chatId of CHAT_IDS) {
-  try {
-    await axios.post(apiUrl, {
-      chat_id: chatId,
-      text: msg,
-      parse_mode: 'Markdown'
-    });
-    console.log('📤 Sent to Telegram');
-  } catch (err) {
-    console.error('❌ Telegram Error:', err.response?.data || err.message);
+    try {
+      await axios.post(apiUrl, {
+        chat_id: chatId,
+        text: msg,
+        parse_mode: 'Markdown'
+      });
+      console.log('📤 Sent to Telegram');
+    } catch (err) {
+      console.error('❌ Telegram Error:', err.response?.data || err.message);
+    }
   }
 };
-}
 
 const getRenderedHTML = async (url) => {
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  // Configure Puppeteer for different environments
+  const launchOptions = {
+    headless: "new", // Use new headless mode to avoid deprecation warning
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process',
+      '--disable-gpu',
+      '--disable-web-security',
+      '--disable-features=VizDisplayCompositor'
+    ],
+  };
 
-  const page = await browser.newPage();
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+  // Try different Chrome paths for different environments
+  const possiblePaths = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+    '/opt/render/project/.cache/puppeteer/chrome/linux-*/chrome-linux*/chrome'
+  ];
 
-  // ✅ Wait for advisory container to appear
-  await page.waitForSelector('#nws-items li.news-item-dtl', { timeout: 15000 });
+  // Only set executablePath if we're in production or if PUPPETEER_EXECUTABLE_PATH is set
+  if (process.env.NODE_ENV === 'production' || process.env.RENDER || process.env.PUPPETEER_EXECUTABLE_PATH) {
+    const fs = require('fs');
+    
+    for (const chromePath of possiblePaths) {
+      if (chromePath && fs.existsSync(chromePath)) {
+        launchOptions.executablePath = chromePath;
+        console.log(`🔍 Using Chrome at: ${chromePath}`);
+        break;
+      }
+    }
+    
+    // If no Chrome found, let Puppeteer use its bundled Chromium
+    if (!launchOptions.executablePath) {
+      console.log('⚠️ No system Chrome found, using Puppeteer bundled Chromium');
+      delete launchOptions.executablePath;
+    }
+  }
 
-  const html = await page.content();
-  await browser.close();
-  return html;
+  const browser = await puppeteer.launch(launchOptions);
+
+  try {
+    const page = await browser.newPage();
+    
+    // Set user agent to avoid being blocked
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+    
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+
+    // Wait for advisory container to appear
+    await page.waitForSelector('#nws-items li.news-item-dtl', { timeout: 15000 });
+
+    const html = await page.content();
+    return html;
+  } finally {
+    await browser.close();
+  }
 };
 
 module.exports = {
@@ -103,8 +151,13 @@ module.exports = {
 
       for (let i = newItems.length - 1; i >= 0; i--) {
         const n = newItems[i];
-        const msg = `📢 *New GST Advisory*\n\n📝 *Title:* ${n.title}\n📅 *Date:* ${n.date}\n🏷 *Tags:* ${n.tags || 'None'}\n\n📄 *Summary:*\n${n.summary || 'No summary.'}\n\n🔗 [View Advisory](${url})`;
-        await sendToTelegram(msg);
+        await sendToTelegram({
+          title: n.title,
+          date: n.date,
+          tags: n.tags,
+          summary: n.summary,
+          url: url
+        });
         await delay();
       }
 
