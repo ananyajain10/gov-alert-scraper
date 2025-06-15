@@ -4,7 +4,7 @@ const path = require('path');
 const sources = require('./sources.json');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.send('✅ Scraper service is running and listening for cron triggers.');

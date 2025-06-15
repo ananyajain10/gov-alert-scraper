@@ -66,8 +66,7 @@ const getRenderedHTML = async (url) => {
     '/opt/render/project/.cache/puppeteer/chrome/linux-*/chrome-linux*/chrome'
   ];
 
-  // Only set executablePath if we're in production or if PUPPETEER_EXECUTABLE_PATH is set
-  if (process.env.NODE_ENV === 'production' || process.env.RENDER || process.env.PUPPETEER_EXECUTABLE_PATH) {
+ 
     const fs = require('fs');
     
     for (const chromePath of possiblePaths) {
@@ -76,7 +75,7 @@ const getRenderedHTML = async (url) => {
         console.log(`🔍 Using Chrome at: ${chromePath}`);
         break;
       }
-    }
+    
     
     // If no Chrome found, let Puppeteer use its bundled Chromium
     if (!launchOptions.executablePath) {
